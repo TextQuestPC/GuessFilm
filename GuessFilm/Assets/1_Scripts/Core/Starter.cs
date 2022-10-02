@@ -12,7 +12,6 @@ namespace Core
 
         private void Start()
         {
-            //AllObjectsInScene.Instance.OnInitialize();
             BoxManager.Init(sceneManagers, isLogging);
 
             UIManager.Instance.OnInitialize();
