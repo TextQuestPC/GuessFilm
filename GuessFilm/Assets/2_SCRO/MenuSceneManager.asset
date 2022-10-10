@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f1e9da2d529924ea3c155c7b25d64a, type: 3}
   m_Name: MenuSceneManager
   m_EditorClassIdentifier: 
-  managers: []
+  managers:
+  - {fileID: 11400000, guid: f5228c3be065a7a409820adf6ab9d986, type: 2}
+  - {fileID: 11400000, guid: 4861d3458774d484c86b5318758ba39c, type: 2}
+  - {fileID: 11400000, guid: 52a0d11952c59dc4ea9021dec5ea058a, type: 2}
