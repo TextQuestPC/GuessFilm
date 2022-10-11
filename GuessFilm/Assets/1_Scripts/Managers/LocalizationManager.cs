@@ -18,7 +18,7 @@ namespace Core
         }
         public void SetLanguage(GameObject gameObject)
         {
-            gameObject.GetComponent<TextMeshProUGUI>().text = language.GetWord(IndexWord.a0);
+            gameObject.GetComponent<TextMeshProUGUI>().text = language.GetWord(IndexWord.StartButton);
         }
     }
     public enum TypeLanguage
@@ -28,12 +28,11 @@ namespace Core
     }
     public enum IndexWord
     {
-        a0,
-        a1,
-        a2,
-        a3,
-        a4,
-        a5,
+        StartButton,
+        SettingButton,
+        Films,
+        Serials,
+        Cartoons
     }
     //доставка перевода в тексты 
     //Удобный метод получения текстов
@@ -52,14 +51,14 @@ namespace Core
         {
             [TypeLanguage.English] =
             {
-                [IndexWord.a0] = "Start",
-                [IndexWord.a1] = "Report",
+                [IndexWord.StartButton] = "Start",
+                [IndexWord.SettingButton] = "Setting",
             },
 
             [TypeLanguage.Russian] =
             {
-                [IndexWord.a0] = "Старт",
-                [IndexWord.a1] = "Сообщить",
+                [IndexWord.StartButton] = "Старт",
+                [IndexWord.SettingButton] = "Настройки",
             }
         };
 
