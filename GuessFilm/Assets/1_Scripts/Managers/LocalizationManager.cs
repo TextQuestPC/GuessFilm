@@ -9,16 +9,20 @@ namespace Core
 
     public class LocalizationManager : BaseManager
     {
-
-        private Language language = new Language(TypeLanguage.Russian);
-
-        public void OnStart(GameObject gameObject)
+        private Language activeLanguage;
+        [SerializeField] private Dictionary<TypeLanguage,TextAsset> languageDictionaries;
+        public void OnStart(TextKeeper[] textKeepers)
         {
-            SetLanguage(gameObject);
+            activeLanguage = new Language(TypeLanguage.Russian);
+            SetLanguage(textKeepers);
         }
-        public void SetLanguage(GameObject gameObject)
+        public void SetLanguage(TextKeeper[] textKeepers)
         {
-            gameObject.GetComponent<TextMeshProUGUI>().text = language.GetWord(IndexWord.StartButton);
+            foreach (var textKeeper in textKeepers)
+            {
+                var translation = activeLanguage.GetWord(textKeeper.IndexWord);
+                textKeeper.Text.SetText(translation);
+            }
         }
     }
     public enum TypeLanguage
@@ -30,15 +34,7 @@ namespace Core
     {
         StartButton,
         SettingButton,
-        Films,
-        Serials,
-        Cartoons
     }
-    //доставка перевода в тексты 
-    //Удобный метод получения текстов
-    //Переменовать a0, a1, a2....
-    // **если получится** вынести словари в файлы;
-    // GameObject.FindObjectsOfType<> ПРИГОДИТСЯ
     public class Language
     {
         private TypeLanguage currentLanguage;
@@ -49,18 +45,22 @@ namespace Core
 
         Dictionary<TypeLanguage, Dictionary<IndexWord, string>> words = new Dictionary<TypeLanguage, Dictionary<IndexWord, string>>()
         {
-            [TypeLanguage.English] =
-            {
-                [IndexWord.StartButton] = "Start",
-                [IndexWord.SettingButton] = "Setting",
+
+            { TypeLanguage.Russian,
+                new Dictionary<IndexWord, string>(){
+                    { IndexWord.StartButton, "Старт" },
+                    { IndexWord.SettingButton, "Настройки" }
+                }
             },
 
-            [TypeLanguage.Russian] =
-            {
-                [IndexWord.StartButton] = "Старт",
-                [IndexWord.SettingButton] = "Настройки",
+            {TypeLanguage.English,
+                new Dictionary<IndexWord, string>(){
+                    { IndexWord.StartButton, "Start" },
+                    { IndexWord.SettingButton, "Setting" }
+                }
             }
         };
+
 
         public string GetWord(IndexWord indexWord)
         {

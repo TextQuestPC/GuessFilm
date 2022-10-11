@@ -9,7 +9,7 @@ namespace Core
     {
         [SerializeField] private SCRO_SceneManagers sceneManagers;
         [SerializeField] private bool isLogging;
-        [SerializeField] GameObject obj;
+        private TextKeeper[] textKeepers;
 
         [SerializeField] private UIManager uiManager;
 
@@ -22,7 +22,13 @@ namespace Core
 
             var localManager = BoxManager.GetManager<LocalizationManager>();
             yield return new WaitForEndOfFrame();
-            localManager.OnStart(obj);
+            GetAllTextKeepers();
+            localManager.OnStart(textKeepers);
+        }
+
+        private void GetAllTextKeepers()
+        {
+            textKeepers = FindObjectsOfType<TextKeeper>();
         }
     }
 }

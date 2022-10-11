@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using Core;
 
 public class TextKeeper : MonoBehaviour
 {
-    void Start()
+    public TextMeshProUGUI Text { get; set; }
+    [SerializeField] private IndexWord indexWord;
+    public IndexWord IndexWord => indexWord;
+
+
+
+    private void Start()
     {
-        
-    }
-    void Update()
-    {
-        
+        Text = GetComponent<TextMeshProUGUI>();
     }
 }
