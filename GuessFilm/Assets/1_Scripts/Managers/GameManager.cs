@@ -26,6 +26,14 @@ namespace Core
 
         #region GAMEPLAY
 
+        public void ShowParts()
+        {
+            BoxManager.GetManager<StorageManager>().SetDataOpenParts(BoxManager.GetManager<SaveLoadManager>().GetOpenParts);
+            UIManager.Instance.GetWindow<UI_Window>().ShowPoints(BoxManager.GetManager<SaveLoadManager>().GetPoints);
+
+            UIManager.Instance.ShowWindow<PartsWindow>();
+        }
+
         public void StartGame()
         {
             UIManager.Instance.HideWindow<PartsWindow>();

@@ -22,6 +22,21 @@ namespace Core
             currentPart = parts[0];
         }
 
+        public void SetDataOpenParts(bool[] openParts)
+        {
+            for (int i = 0; i < parts.Length; i++)
+            {
+                if(parts[i].PricePart == 0)
+                {
+                    parts[i].IsOpen = true;
+                }
+                else
+                {
+                    parts[i].IsOpen = openParts[i];
+                }
+            }
+        }
+
         public void SelectNewPart(int numberPart)
         {
             foreach (var part in parts)

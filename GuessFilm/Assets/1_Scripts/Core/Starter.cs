@@ -20,6 +20,7 @@ namespace Core
             BoxManager.Init(sceneManagers);
 
             BoxManager.GetManager<LogManager>().SetIsNeedLog = isLogging;
+            BoxManager.GetManager<AdManager>().SetYandexGame = YG;
 
             AuthorizationPlayer();
         }
@@ -29,7 +30,7 @@ namespace Core
             YG.ResolvedAuthorization.AddListener(ResolvedAuthorization);
             YG.RejectedAuthorization.AddListener(RejectedAuthorization);
 
-            YG._AuthorizationCheck();
+            //YG._AuthorizationCheck();
         }
 
         private void ResolvedAuthorization()
@@ -62,8 +63,7 @@ namespace Core
             BoxManager.GetManager<SaveLoadManager>().LoadData();
 
             BoxManager.GetManager<AdManager>().ShowFullScreen();
-
-            UIManager.Instance.ShowWindow<PartsWindow>();
+            BoxManager.GetManager<GameManager>().ShowParts();
         }
 
         private void SwitchLanguage(string lang)

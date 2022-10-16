@@ -23,6 +23,11 @@ namespace UI
             namePartText.text = data.NamePart;
             imagePart.sprite = data.SpritePart;
             numberPart = data.NumberPart;
+
+            if (!data.IsOpen)
+            {
+                GetComponent<Button>().interactable = false;
+            }
         }
 
         public void SelectButton()
