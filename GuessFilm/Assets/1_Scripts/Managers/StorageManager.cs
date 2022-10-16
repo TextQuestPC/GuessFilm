@@ -17,8 +17,6 @@ namespace Core
 
         public override void OnInitialize()
         {
-            // TODO: Load on save current part
-
             currentPart = parts[0];
         }
 
@@ -26,7 +24,7 @@ namespace Core
         {
             for (int i = 0; i < parts.Length; i++)
             {
-                if(parts[i].PricePart == 0)
+                if (parts[i].PricePart == 0)
                 {
                     parts[i].IsOpen = true;
                 }
@@ -49,6 +47,42 @@ namespace Core
             }
 
             BoxManager.GetManager<LogManager>().LogError($"Not have part with number {numberPart}");
+        }
+
+        public void TryOpenPart(int numberPart)
+        {
+            PartData part = null;
+            int points = BoxManager.GetManager<PointsManager>().GetPoints;
+
+            for (int i = 0; i < parts.Length; i++)
+            {
+                if (parts[i].NumberPart == numberPart)
+                {
+                    part = parts[i];
+                }
+            }
+
+            if (part != null)
+            {
+                if (part.PricePart <= points)
+                {
+                    BoxManager.GetManager<PointsManager>().SubtractPoints(part.PricePart);
+
+                    part.IsOpen = true;
+                    bool[] openParts = new bool[parts.Length];
+
+                    for (int i = 0; i < parts.Length; i++)
+                    {
+                        openParts[i] = parts[i].IsOpen;
+                    }
+
+                    BoxManager.GetManager<SaveLoadManager>().SaveOpenPart(openParts);
+                }
+            }
+            else
+            {
+                BoxManager.GetManager<LogManager>().LogError($"Not have part with number {numberPart}");
+            }
         }
     }
 }

@@ -15,6 +15,15 @@ namespace Core
             points += value;
 
             UIManager.Instance.GetWindow<UI_Window>().ShowPoints(points);
+            BoxManager.GetManager<SaveLoadManager>().SavePoints(points);
+        }
+
+        public void SubtractPoints(int value)
+        {
+            points -= value;
+
+            UIManager.Instance.GetWindow<UI_Window>().ShowPoints(points);
+            BoxManager.GetManager<SaveLoadManager>().SavePoints(points);
         }
     }
 }

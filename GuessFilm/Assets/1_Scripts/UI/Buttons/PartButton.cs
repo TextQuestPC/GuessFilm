@@ -1,3 +1,4 @@
+using Core;
 using Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,11 +7,14 @@ namespace UI
 {
     public class PartButton : MyButton
     {
-        [SerializeField] private Image imagePart, selectImage;
+        [SerializeField] private Image imagePart;
+        [SerializeField] private GameObject selectObject, closeObject;
+        [SerializeField] private Text priceText, buyText;
 
         private PartsWindow partsWindow;
         private Text namePartText;
         private int numberPart;
+        private bool isOpen;
 
         protected override void AfterAwake()
         {
@@ -23,6 +27,10 @@ namespace UI
             namePartText.text = data.NamePart;
             imagePart.sprite = data.SpritePart;
             numberPart = data.NumberPart;
+            isOpen = data.IsOpen;
+            priceText.text = data.PricePart.ToString();
+
+            closeObject.SetActive(!isOpen);
 
             if (!data.IsOpen)
             {
@@ -32,17 +40,24 @@ namespace UI
 
         public void SelectButton()
         {
-            selectImage.gameObject.SetActive(true);
+            selectObject.SetActive(true);
         }
 
         public void CancelSelectButton()
         {
-            selectImage.gameObject.SetActive(false);
+            selectObject.SetActive(false);
         }
 
         protected override void OnClickButton()
         {
-            partsWindow.SelectPart(this, numberPart);
+            if (isOpen)
+            {
+                partsWindow.SelectPart(this, numberPart);
+            }
+            else
+            {
+                BoxManager.GetManager<StorageManager>().TryOpenPart(numberPart);
+            }
         }
     }
 }

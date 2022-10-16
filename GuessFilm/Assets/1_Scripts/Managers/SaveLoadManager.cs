@@ -18,9 +18,16 @@ namespace Core
             openParts = YandexGame.savesData.openParts;
         }
 
-        public void SaveData(int points, bool[] openParts)
+        public void SavePoints(int points)
         {
             YandexGame.savesData.points = points;
+
+            YandexGame.SaveProgress();
+        }
+
+
+        public void SaveOpenPart(bool[] openParts)
+        {
             YandexGame.savesData.openParts = openParts;
 
             YandexGame.SaveProgress();
