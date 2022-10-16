@@ -1,5 +1,6 @@
 ﻿using Data;
 using NaughtyAttributes;
+using UI;
 using UnityEngine;
 
 namespace Core
@@ -77,6 +78,7 @@ namespace Core
                     }
 
                     BoxManager.GetManager<SaveLoadManager>().SaveOpenPart(openParts);
+                    UIManager.Instance.GetWindow<PartsWindow>().ChangeData();
                 }
             }
             else

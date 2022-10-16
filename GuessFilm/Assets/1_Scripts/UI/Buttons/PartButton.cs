@@ -31,11 +31,6 @@ namespace UI
             priceText.text = data.PricePart.ToString();
 
             closeObject.SetActive(!isOpen);
-
-            if (!data.IsOpen)
-            {
-                GetComponent<Button>().interactable = false;
-            }
         }
 
         public void SelectButton()
