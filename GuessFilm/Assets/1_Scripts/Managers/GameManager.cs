@@ -8,10 +8,14 @@ namespace Core
     public class GameManager : BaseManager
     {
         private TypeLanguage language;
+        private bool isGameNow;
 
         private PuzzleData[] currentPuzzles;
         private int counterPuzzle = 0;
         private string currentVariant;
+        private int countPoints;
+
+        public TypeLanguage Language { get => language; set => language = value; }
 
         public override void OnInitialize()
         {
@@ -22,19 +26,26 @@ namespace Core
 
         public override void OnStart()
         {
+            UIManager.Instance.ShowWindow<PartsWindow>();
+        }
+
+        #region GAMEPLAY
+
+        public void StartGame()
+        {
+            UIManager.Instance.HideWindow<PartsWindow>();
+
             NextPartPuzzles();
             NextVariant();
+
+            isGameNow = true;
         }
 
         public void SelectVariantPart(string variant)
         {
-            if(variant == currentVariant)
+            if (variant == currentVariant)
             {
-                Debug.Log("Óדאהאכ");
-            }
-            else
-            {
-                Debug.Log("ÍÅ Óדאהאכ");
+                BoxManager.GetManager<PointsManager>().AddPoints(countPoints);
             }
 
             AfterSelectVariant();
@@ -42,24 +53,25 @@ namespace Core
 
         private void NextPartPuzzles()
         {
-            currentPuzzles = BoxManager.GetManager<StoragePuzzleManager>().GetCurrentPart;
+            currentPuzzles = BoxManager.GetManager<StorageManager>().GetCurrentPart.PuzzlesData;
             counterPuzzle = 0;
         }
 
         private void NextVariant()
         {
             PuzzleData data = currentPuzzles[counterPuzzle];
-            string[] texts = null;
+            string[] texts = new string[4];
+            countPoints = data.CountPoints;
 
             if (language == TypeLanguage.Russian)
             {
                 currentVariant = data.RussianVariants[0];
-                texts = data.RussianVariants;
+                data.RussianVariants.CopyTo(texts, 0);
             }
             else if (language == TypeLanguage.English)
             {
                 currentVariant = data.EnglishVariants[0];
-                texts = data.EnglishVariants;
+                data.EnglishVariants.CopyTo(texts, 0);
             }
 
             if (texts == null)
@@ -95,7 +107,7 @@ namespace Core
         {
             counterPuzzle++;
 
-            if(counterPuzzle >= currentPuzzles.Length)
+            if (counterPuzzle >= currentPuzzles.Length)
             {
                 NextPartPuzzles();
             }
@@ -103,6 +115,22 @@ namespace Core
             {
                 NextVariant();
             }
+        }
+
+        #endregion GAMEPLAY
+
+        public void ClickSettingsButton()
+        {
+            isGameNow = false;
+
+            UIManager.Instance.ShowWindow<SettingsWindow>();
+        }
+
+        public void CloseSettingsWindow()
+        {
+            isGameNow = true;
+
+            UIManager.Instance.HideWindow<SettingsWindow>();
         }
     }
 }

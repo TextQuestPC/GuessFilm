@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Data
 {
-    [CreateAssetMenu(fileName = "SCRO_PuzzleManager", menuName = "Data/PazzleData")]
+    [CreateAssetMenu(fileName = "PuzzleData", menuName = "Data/PazzleData")]
     public class PuzzleData : ScriptableObject
     {
         [BoxGroup("Russian variants")]
@@ -12,5 +12,7 @@ namespace Data
         public string[] EnglishVariants;
         [BoxGroup("Sprite")]
         public Sprite Sprite;
+        [BoxGroup("Points")]
+        public int CountPoints = 10;
     }
 }
