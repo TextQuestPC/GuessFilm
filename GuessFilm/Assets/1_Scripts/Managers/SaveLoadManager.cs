@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Core
 {
-    [CreateAssetMenu(fileName = "SCRO_SaveLoadManager", menuName = "Architecture/SCRO_SceneManagers/SCRO_SaveLoadManager")]
+    [CreateAssetMenu(fileName = "SaveLoadManager", menuName = "Managers/SaveLoadManager")]
     public class SaveLoadManager : BaseManager
     {
         public void Save(string key, object obj)

@@ -2,7 +2,7 @@
 using System;
 namespace Core
 {
-    [CreateAssetMenu(fileName = "SCRO_AudioManager", menuName = "Architecture/SCRO_SceneManagers/SCRO_AudioManager")]
+    [CreateAssetMenu(fileName = "SCRO_AudioManager", menuName = "Managers/AudioManager")]
     public class AudioManager : BaseManager
     {
         [SerializeField] private AudioClip[] audioClips;

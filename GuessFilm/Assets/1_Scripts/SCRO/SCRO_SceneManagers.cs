@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Core
 {
-    [CreateAssetMenu(fileName = "SCRO_SceneManager", menuName = "Architecture/SCRO_SceneManagers/SCRO_SceneManagers")]
+    [CreateAssetMenu(fileName = "SceneManager", menuName = "Managers/SceneManagers")]
     public class SCRO_SceneManagers : ScriptableObject
     {
         [SerializeField, ClassReference(typeof(BaseManager))]
