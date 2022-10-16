@@ -69,8 +69,26 @@ namespace Core
             }
             else
             {
+                texts = Shuffle(texts);
                 UIManager.Instance.GetWindow<VariantsWindow>().SetData(texts, data.Sprite);
             }
+        }
+
+        private string[] Shuffle(string[] texts)
+        {
+            int n = texts.Length;
+            var rand = new System.Random();
+
+            while (n > 1)
+            {
+                n--;
+                int r = rand.Next(n + 1);
+                string value = texts[r];
+                texts[r] = texts[n];
+                texts[n] = value;
+            }
+
+            return texts;
         }
 
         private void AfterSelectVariant()
