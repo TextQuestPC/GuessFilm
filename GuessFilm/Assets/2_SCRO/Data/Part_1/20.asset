@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1b9af36af1570147a52e8fb68877bf6, type: 3}
-  m_Name: 3
+  m_Name: 20
   m_EditorClassIdentifier: 
   RussianVariants:
-  - "\u041A\u043E\u0440\u043E\u043B\u044C \u041B\u0435\u0432"
+  - "\u0413\u043E\u043B\u043E\u0432\u043E\u043B\u043E\u043C\u043A\u0430"
   - "\u0414\u0443\u0448\u0430"
-  - "\u0411\u0430\u043B\u0442\u043E"
-  - "\u0417\u0432\u0435\u0440\u043E\u043F\u043E\u043B\u0438\u0441"
+  - "\u0412\u0432\u0435\u0440\u0445"
+  - "\u0412\u043F\u0435\u0440\u0451\u0434"
   EnglishVariants:
-  - The Lion King
+  - Inside Out
   - Soul
-  - "\u0411\u0430\u043B\u0442\u043E"
-  - Zootopia
-  Sprite: {fileID: 21300000, guid: c5bd18d2b646e9a4aa07b8f979bf3896, type: 3}
+  - Up
+  - Onward
+  Sprite: {fileID: 21300000, guid: ab127881112431d4c99dc2de403e71f9, type: 3}
   CountPoints: 10
