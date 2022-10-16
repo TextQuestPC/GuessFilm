@@ -11,6 +11,8 @@ namespace UI
 
         public void SetData(string[] texts, Sprite sprite)
         {
+            Show();
+
             if(texts.Length < 4)
             {
                 BoxManager.GetManager<LogManager>().LogError($"Count texts < 4!");

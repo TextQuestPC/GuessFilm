@@ -10,12 +10,12 @@ namespace Core
 
         private void Start()
         {
-            BoxManager.Init(sceneManagers, isLogging);
-
             UIManager.Instance.OnInitialize();
             UIManager.Instance.OnStart();
 
-            BoxManager.GetManager<GameManager>().StartGame();
+            BoxManager.Init(sceneManagers);
+
+            BoxManager.GetManager<LogManager>().SetIsNeedLog = isLogging;
         }
     }
 }

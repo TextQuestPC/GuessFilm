@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7110f619eeff2847a72889d07633b70, type: 3}
-  m_Name: StoragePuzzleManager
+  m_Script: {fileID: 11500000, guid: fef2a3bd0b329d24f818b64c1a665fad, type: 3}
+  m_Name: GameManager
   m_EditorClassIdentifier: 
-  part_1:
-  - {fileID: 11400000, guid: d67058749085d8748ad67bee94b71379, type: 2}

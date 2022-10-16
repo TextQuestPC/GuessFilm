@@ -11,16 +11,13 @@ namespace Core
 
         private static SCRO_SceneManagers sceneManagers;
 
-        private static bool isLogging = false;
-        public static bool GetIsLogging { get => isLogging; }
         public static object GetMan { get; internal set; }
 
         #region INIT
 
-        public static void Init(SCRO_SceneManagers sceneManagers, bool isLogging)
+        public static void Init(SCRO_SceneManagers sceneManagers)
         {
             BoxManager.sceneManagers = sceneManagers;
-            BoxManager.isLogging = isLogging;
 
             Coroutines.StartRoutine(InitGameRoutine());
         }

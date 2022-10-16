@@ -20,7 +20,7 @@ namespace Core
             language = TypeLanguage.Russian;
         }
 
-        public void StartGame()
+        public override void OnStart()
         {
             NextPartPuzzles();
             NextVariant();
