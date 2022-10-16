@@ -32,7 +32,7 @@ namespace Core
             source.gameObject.name = "Audio";
             PlaySound(0);
             save = BoxManager.GetManager<SaveLoadManager>();
-            data = save.Load<AuidoData>("AudioManager");
+            //data = save.Load<AuidoData>("AudioManager");
         }
         public override void OnInitialize()
         {
@@ -40,7 +40,7 @@ namespace Core
         }
         private void OnDestroy()
         {
-            save.Save("AudioManager",data);
+            //save.Save("AudioManager",data);
         }
     }
 

@@ -19,7 +19,7 @@ MonoBehaviour:
   checkAdblock: 1
   fullscreenAdChallenge: 0
   LocalizationEnable: 1
-  callingLanguageCheck: 0
+  callingLanguageCheck: 1
   translateMethod: 0
   CSVFileTranslate:
     format: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   languages:
     ru: 1
     en: 1
-    tr: 1
+    tr: 0
     az: 0
     be: 0
     he: 0

@@ -24,11 +24,6 @@ namespace Core
             language = TypeLanguage.Russian;
         }
 
-        public override void OnStart()
-        {
-            UIManager.Instance.ShowWindow<PartsWindow>();
-        }
-
         #region GAMEPLAY
 
         public void StartGame()
