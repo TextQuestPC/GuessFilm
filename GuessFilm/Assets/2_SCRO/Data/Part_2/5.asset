@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1b9af36af1570147a52e8fb68877bf6, type: 3}
-  m_Name: 2
+  m_Name: 5
   m_EditorClassIdentifier: 
   RussianVariants:
-  - "\u0417\u0435\u043B\u0451\u043D\u0430\u044F \u043C\u0438\u043B\u044F"
-  - "\u0424\u043E\u0440\u0440\u0435\u0441\u0442 \u0413\u0430\u043C\u043F"
-  - 1+1
   - "\u041A\u0440\u0451\u0441\u0442\u043D\u044B\u0439 \u043E\u0442\u0435\u0446"
+  - "\u0411\u043E\u0439\u0446\u043E\u0432\u0441\u043A\u0438\u0439 \u043A\u043B\u0443\u0431"
+  - "\u041A\u0440\u0438\u043C\u0438\u043D\u0430\u043B\u044C\u043D\u043E\u0435 \u0447\u0442\u0438\u0432\u043E"
+  - "\u041D\u0430\u0437\u0430\u0434 \u0432 \u0431\u0443\u0434\u0443\u0449\u0435\u0435"
   EnglishVariants:
-  - The Green Mile
-  - Forrest Gump
-  - 1+1
   - The GodFather
-  Sprite: {fileID: 21300000, guid: 19ee2282ce3894e41a902f16aec9cab6, type: 3}
+  - Fight Club
+  - Pulp Fiction
+  - Back To The Future
+  Sprite: {fileID: 21300000, guid: 851308ec3925a564fa7a95149ddcb303, type: 3}
   CountPoints: 10
