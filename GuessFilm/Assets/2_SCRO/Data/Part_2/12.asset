@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1b9af36af1570147a52e8fb68877bf6, type: 3}
-  m_Name: 1
+  m_Name: 12
   m_EditorClassIdentifier: 
   RussianVariants:
-  - "\u041F\u043E\u0431\u0435\u0433 \u0438\u0437 \u0428\u043E\u0443\u0448\u0435\u043D\u043A\u0430"
-  - "\u0417\u0435\u043B\u0451\u043D\u0430\u044F \u043C\u0438\u043B\u044F"
-  - "\u0424\u043E\u0440\u0440\u0435\u0441\u0442 \u0413\u0430\u043C\u043F"
-  - 1+1
+  - "\u0418\u043D\u0442\u0435\u0440\u0441\u0442\u0435\u043B\u043B\u0430\u0440"
+  - "\u041C\u0430\u0442\u0440\u0438\u0446\u0430"
+  - "\u0417\u0435\u043B\u0451\u043D\u0430\u044F \u043A\u043D\u0438\u0433\u0430"
+  - "\u0422\u0438\u0442\u0430\u043D\u0438\u043A"
   EnglishVariants:
-  - The Shawshank Redemption
-  - The Green Mile
-  - Forrest Gump
-  - 1+1
-  Sprite: {fileID: 21300000, guid: 5ec6c97fefaa4c34987126ed98a96666, type: 3}
+  - Interstellar
+  - The Matrix
+  - Green Book
+  - Titanic
+  Sprite: {fileID: 21300000, guid: 7727152c4d040ab4380d2ee4fbc09a28, type: 3}
   CountPoints: 10
