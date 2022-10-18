@@ -1,11 +1,14 @@
 using Core;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace UI
 {
     public class VariantsWindow : Window
     {
+        public UnityEvent OnSelectVariant;
+
         [SerializeField] private VariantButton[] buttons;
         [SerializeField] private Image image;
 
@@ -29,6 +32,8 @@ namespace UI
         public void SelectVariant(string text)
         {
             BoxManager.GetManager<GameManager>().SelectVariantPart(text);
+
+            OnSelectVariant?.Invoke();
         }
     }
 }

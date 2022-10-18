@@ -63,7 +63,7 @@ namespace Core
             BoxManager.GetManager<SaveLoadManager>().LoadData();
 
             BoxManager.GetManager<AdManager>().ShowFullScreen();
-            BoxManager.GetManager<GameManager>().ShowParts();
+            BoxManager.GetManager<GameManager>().StartGame();
         }
 
         private void SwitchLanguage(string lang)

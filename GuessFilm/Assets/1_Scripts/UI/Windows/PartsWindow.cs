@@ -53,7 +53,7 @@ namespace UI
 
         private void ClickStartGame()
         {
-            BoxManager.GetManager<GameManager>().StartGame();
+            BoxManager.GetManager<GameManager>().ClickPartGame();
         }
     }
 }

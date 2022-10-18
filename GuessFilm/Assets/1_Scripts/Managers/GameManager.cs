@@ -26,15 +26,25 @@ namespace Core
 
         #region GAMEPLAY
 
-        public void ShowParts()
+        public void StartGame()
         {
-            BoxManager.GetManager<StorageManager>().SetDataOpenParts(BoxManager.GetManager<SaveLoadManager>().GetOpenParts);
-            UIManager.Instance.GetWindow<UI_Window>().ShowPoints(BoxManager.GetManager<SaveLoadManager>().GetPoints);
+            if (BoxManager.GetManager<SaveLoadManager>().GetFirstStart)
+            {
+                Проверить запуст тутора
+                BoxManager.GetManager<SaveLoadManager>().SaveFirstStart();
+                BoxManager.GetManager<TutorialManager>().StartSelectVariantTutor();
+                ClickPartGame();
+            }
+            else
+            {
+                BoxManager.GetManager<StorageManager>().SetDataOpenParts(BoxManager.GetManager<SaveLoadManager>().GetOpenParts);
+                UIManager.Instance.GetWindow<UI_Window>().ShowPoints(BoxManager.GetManager<SaveLoadManager>().GetPoints);
 
-            UIManager.Instance.ShowWindow<PartsWindow>();
+                UIManager.Instance.ShowWindow<PartsWindow>();
+            }
         }
 
-        public void StartGame()
+        public void ClickPartGame()
         {
             UIManager.Instance.HideWindow<PartsWindow>();
 
