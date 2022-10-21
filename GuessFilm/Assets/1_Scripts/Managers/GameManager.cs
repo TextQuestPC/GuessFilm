@@ -28,9 +28,8 @@ namespace Core
 
         public void StartGame()
         {
-            if (BoxManager.GetManager<SaveLoadManager>().GetFirstStart)
+            if (!BoxManager.GetManager<SaveLoadManager>().GetFirstStart)
             {
-                Проверить запуст тутора
                 BoxManager.GetManager<SaveLoadManager>().SaveFirstStart();
                 BoxManager.GetManager<TutorialManager>().StartSelectVariantTutor();
                 ClickPartGame();
