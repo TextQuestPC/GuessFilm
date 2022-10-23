@@ -23,10 +23,5 @@ namespace UI
         {
             BoxManager.GetManager<GameManager>().ClickSettingsButton();
         }
-
-        public void AddPoints()
-        {
-            BoxManager.GetManager<PointsManager>().AddPoints(100);
-        }
     }
 }

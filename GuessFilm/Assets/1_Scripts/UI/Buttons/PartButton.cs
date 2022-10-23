@@ -9,17 +9,15 @@ namespace UI
     {
         [SerializeField] private Image imagePart;
         [SerializeField] private GameObject selectObject, closeObject;
-        [SerializeField] private Text priceText, buyText;
+        [SerializeField] private Text namePartText, priceText, buyText, countGuess;
 
         private PartsWindow partsWindow;
-        private Text namePartText;
         private int numberPart;
         private bool isOpen;
 
         protected override void AfterAwake()
         {
             partsWindow = GetComponentInParent<PartsWindow>();
-            namePartText = GetComponentInChildren<Text>();
         }
 
         public void SetData(PartData data)
@@ -29,6 +27,7 @@ namespace UI
             numberPart = data.NumberPart;
             isOpen = data.IsOpen;
             priceText.text = data.PricePart.ToString();
+            countGuess.text = "0/" + data.PuzzlesData.Length;
 
             closeObject.SetActive(!isOpen);
         }

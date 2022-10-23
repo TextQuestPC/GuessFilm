@@ -34,6 +34,7 @@ namespace UI
                 if (i < parts.Length)
                 {
                     partButtons[i].SetData(parts[i]);
+                    partButtons[i].gameObject.SetActive(true);
                 }
                 else
                 {

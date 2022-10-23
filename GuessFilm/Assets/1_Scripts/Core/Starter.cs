@@ -11,6 +11,7 @@ namespace Core
 
         [SerializeField] private SCRO_SceneManagers sceneManagers;
         [SerializeField] private bool isLogging;
+        [SerializeField] private bool skipTutorial;
 
         private void Start()
         {
@@ -21,6 +22,8 @@ namespace Core
 
             BoxManager.GetManager<LogManager>().SetIsNeedLog = isLogging;
             BoxManager.GetManager<AdManager>().SetYandexGame = YG;
+
+            BoxManager.GetManager<GameManager>().SkipTutorial = skipTutorial;
 
             AuthorizationPlayer();
         }

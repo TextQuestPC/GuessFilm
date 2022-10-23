@@ -16,6 +16,7 @@ namespace Core
         private int countPoints;
 
         public TypeLanguage Language { get => language; set => language = value; }
+        public bool SkipTutorial { get; set; }
 
         public override void OnInitialize()
         {
@@ -28,7 +29,7 @@ namespace Core
 
         public void StartGame()
         {
-            if (!BoxManager.GetManager<SaveLoadManager>().GetFirstStart)
+            if (!SkipTutorial && !BoxManager.GetManager<SaveLoadManager>().GetFirstStart)
             {
                 BoxManager.GetManager<SaveLoadManager>().SaveFirstStart();
                 BoxManager.GetManager<TutorialManager>().StartSelectVariantTutor();

@@ -1,7 +1,9 @@
 using UI;
+using UnityEngine;
 
 namespace Core
 {
+    [CreateAssetMenu(fileName = "TutorialManager", menuName = "Managers/TutorialManager")]
     public class TutorialManager : BaseManager
     {
         public void StartSelectVariantTutor()

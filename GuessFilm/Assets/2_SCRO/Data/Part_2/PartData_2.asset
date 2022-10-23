@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsOpen: 1
   PricePart: 0
-  NumberPart: 0
+  NumberPart: 2
   NamePart: "\u0424\u0438\u043B\u044C\u043C\u044B"
   SpritePart: {fileID: 21300000, guid: 5ec6c97fefaa4c34987126ed98a96666, type: 3}
   PuzzlesData:
