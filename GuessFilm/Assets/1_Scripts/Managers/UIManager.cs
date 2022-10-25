@@ -60,7 +60,7 @@ namespace UI
             }
             else
             {
-                Debug.Log($"<color=red>Нет окна {typeof(T)}, для показа!");
+                Debug.Log($"<color=red>Нет окна {typeof(T)}, для показа!</color>");
             }
         }
 

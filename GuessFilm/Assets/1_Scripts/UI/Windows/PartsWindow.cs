@@ -19,6 +19,14 @@ namespace UI
 
         protected override void AfterShow()
         {
+            ChangeData();
+
+            currentButton = partButtons[0];
+            currentButton.SelectButton();
+        }
+
+        public void ChangeData()
+        {
             PartData[] parts = BoxManager.GetManager<StorageManager>().GetAllParts;
 
             for (int i = 0; i < partButtons.Length; i++)
@@ -26,15 +34,13 @@ namespace UI
                 if (i < parts.Length)
                 {
                     partButtons[i].SetData(parts[i]);
+                    partButtons[i].gameObject.SetActive(true);
                 }
                 else
                 {
                     partButtons[i].gameObject.SetActive(false);
                 }
             }
-
-            currentButton = partButtons[0];
-            currentButton.SelectButton();
         }
 
         public void SelectPart(PartButton button, int numberButton)
@@ -48,7 +54,7 @@ namespace UI
 
         private void ClickStartGame()
         {
-            BoxManager.GetManager<GameManager>().StartGame();
+            BoxManager.GetManager<GameManager>().ClickPartGame();
         }
     }
 }
