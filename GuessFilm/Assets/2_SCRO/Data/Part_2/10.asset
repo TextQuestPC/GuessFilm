@@ -23,4 +23,4 @@ MonoBehaviour:
   - A Beautiful Mind
   - The Prestige
   Sprite: {fileID: 21300000, guid: bc46f9ee4ecae9f408b44114ae30dbfe, type: 3}
-  CountPoints: 10
+  CountPoints: 5

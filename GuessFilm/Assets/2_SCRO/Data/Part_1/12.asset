@@ -23,4 +23,4 @@ MonoBehaviour:
   - Anastasia
   - Le Petit Prince
   Sprite: {fileID: 21300000, guid: abaa3efe4b215b64792602e9d056bb17, type: 3}
-  CountPoints: 10
+  CountPoints: 5

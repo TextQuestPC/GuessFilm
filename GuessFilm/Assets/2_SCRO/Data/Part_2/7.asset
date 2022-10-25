@@ -23,4 +23,4 @@ MonoBehaviour:
   - A Beautiful Mind
   - The Dark Knight
   Sprite: {fileID: 21300000, guid: 77bcd3c980d78f144ab721d3eec79fd0, type: 3}
-  CountPoints: 10
+  CountPoints: 15

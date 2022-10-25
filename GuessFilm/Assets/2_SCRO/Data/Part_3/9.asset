@@ -25,4 +25,4 @@ MonoBehaviour:
   - Downton Abbey
   - Stranger Things
   Sprite: {fileID: 21300000, guid: c7c2b3b2af9558e4583a13374c7e94b0, type: 3}
-  CountPoints: 10
+  CountPoints: 5

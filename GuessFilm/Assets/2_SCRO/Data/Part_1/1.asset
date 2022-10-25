@@ -23,4 +23,4 @@ MonoBehaviour:
   - CatDog
   - South park
   Sprite: {fileID: 21300000, guid: d4a0e8b0a3aabf64a990a65908a2ab62, type: 3}
-  CountPoints: 10
+  CountPoints: 5

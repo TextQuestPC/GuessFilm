@@ -23,4 +23,4 @@ MonoBehaviour:
   - Watchmen
   - The Tomorrow War
   Sprite: {fileID: 21300000, guid: ce016d22920a9b24d82569aae0b180d4, type: 3}
-  CountPoints: 10
+  CountPoints: 5

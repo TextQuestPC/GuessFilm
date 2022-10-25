@@ -23,4 +23,4 @@ MonoBehaviour:
   - Big Hero 6
   - The Emperor's New Groove
   Sprite: {fileID: 21300000, guid: 5463bc272b8423841bc0aee2242b3d3f, type: 3}
-  CountPoints: 10
+  CountPoints: 5

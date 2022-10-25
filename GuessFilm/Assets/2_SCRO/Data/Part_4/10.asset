@@ -24,4 +24,4 @@ MonoBehaviour:
   - Edge of Tomorrow
   - Greyhound
   Sprite: {fileID: 21300000, guid: 1ec58a2457019444089c4acdce9a8274, type: 3}
-  CountPoints: 10
+  CountPoints: 5

@@ -23,4 +23,4 @@ MonoBehaviour:
   - Four Brothers
   - 6 Underground
   Sprite: {fileID: 21300000, guid: 624df09e557d9fb429ae299f9d253d0c, type: 3}
-  CountPoints: 10
+  CountPoints: 15

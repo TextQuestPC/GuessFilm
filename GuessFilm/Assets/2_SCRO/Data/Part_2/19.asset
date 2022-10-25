@@ -23,4 +23,4 @@ MonoBehaviour:
   - Gone with the Wind
   - Titanic
   Sprite: {fileID: 21300000, guid: 2bdc208973fe8ae43b75d3726061074a, type: 3}
-  CountPoints: 10
+  CountPoints: 15

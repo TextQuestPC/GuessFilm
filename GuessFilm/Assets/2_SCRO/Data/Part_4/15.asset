@@ -24,4 +24,4 @@ MonoBehaviour:
   - Bloodshot
   - The Dark Knight
   Sprite: {fileID: 21300000, guid: 816cc4a7302ee6243981087637b5ef69, type: 3}
-  CountPoints: 10
+  CountPoints: 5

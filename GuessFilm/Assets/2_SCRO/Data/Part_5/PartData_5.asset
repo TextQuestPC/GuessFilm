@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ff65289563f5a44a18d8918a2ed990, type: 3}
   m_Name: PartData_5
   m_EditorClassIdentifier: 
-  IsOpen: 1
-  PricePart: 0
+  IsOpen: 0
+  PricePart: 230
   NumberPart: 0
   NamePart: "\u041A\u043E\u043C\u0435\u0434\u0438\u0438"
   SpritePart: {fileID: 21300000, guid: 45b3155e48abfdc4b954f8d14005f12b, type: 3}

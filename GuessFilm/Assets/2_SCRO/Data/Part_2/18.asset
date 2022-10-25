@@ -24,4 +24,4 @@ MonoBehaviour:
   - Terminator
   - Back to the Future
   Sprite: {fileID: 21300000, guid: e8cb30d1deff0144d9a65108b9e9b22d, type: 3}
-  CountPoints: 10
+  CountPoints: 5

@@ -24,4 +24,4 @@ MonoBehaviour:
   - Project X
   - 'The Naked Gun: From the Files of Police Squad!'
   Sprite: {fileID: 21300000, guid: bfb0501716af85f40b36e9f4fd5373e7, type: 3}
-  CountPoints: 10
+  CountPoints: 15

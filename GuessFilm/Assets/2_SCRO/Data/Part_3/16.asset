@@ -23,4 +23,4 @@ MonoBehaviour:
   - The X-Files
   - Sons of Anarchy
   Sprite: {fileID: 21300000, guid: 68e16c36f2ee79a478863dad6d952194, type: 3}
-  CountPoints: 10
+  CountPoints: 15

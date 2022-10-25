@@ -24,4 +24,4 @@ MonoBehaviour:
   - Inside Out
   - Ratatouille
   Sprite: {fileID: 21300000, guid: 7dea3d7079f7a51468bee41469327512, type: 3}
-  CountPoints: 10
+  CountPoints: 5

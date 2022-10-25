@@ -23,4 +23,4 @@ MonoBehaviour:
   - Finding Nemo
   - Frozen
   Sprite: {fileID: 21300000, guid: bfe781b237e032148b4dd9dae8c58a86, type: 3}
-  CountPoints: 10
+  CountPoints: 5

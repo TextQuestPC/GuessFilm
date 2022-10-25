@@ -23,4 +23,4 @@ MonoBehaviour:
   - Better Call Saul
   - Billions
   Sprite: {fileID: 21300000, guid: 7a6b348515176ba49a6c92d35cd8ad61, type: 3}
-  CountPoints: 10
+  CountPoints: 5

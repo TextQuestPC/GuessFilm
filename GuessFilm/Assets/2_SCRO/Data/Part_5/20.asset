@@ -24,4 +24,4 @@ MonoBehaviour:
   - 'Zombieland: Double Tap'
   - The Professor
   Sprite: {fileID: 21300000, guid: 19b37ea5f9d9b2c4a85fe016d426db39, type: 3}
-  CountPoints: 10
+  CountPoints: 15

@@ -23,4 +23,4 @@ MonoBehaviour:
   - Ratatouille
   - The Emperor's New Groove
   Sprite: {fileID: 21300000, guid: e486d4d58fb338b4fa6e3e8f692f9c0f, type: 3}
-  CountPoints: 10
+  CountPoints: 5

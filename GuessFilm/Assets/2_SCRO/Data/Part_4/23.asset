@@ -23,4 +23,4 @@ MonoBehaviour:
   - Riddick
   - Next
   Sprite: {fileID: 21300000, guid: a081e0430fc3c924bbc2c0db8b410ec1, type: 3}
-  CountPoints: 10
+  CountPoints: 5

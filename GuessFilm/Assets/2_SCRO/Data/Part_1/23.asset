@@ -24,4 +24,4 @@ MonoBehaviour:
   - Kung Fu Panda
   - Luca
   Sprite: {fileID: 21300000, guid: 3a0e42a399a58ca49add1b746c6fc6b2, type: 3}
-  CountPoints: 10
+  CountPoints: 5

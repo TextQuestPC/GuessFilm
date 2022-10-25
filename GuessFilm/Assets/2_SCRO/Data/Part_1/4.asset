@@ -23,4 +23,4 @@ MonoBehaviour:
   - Kimi no na wa
   - "\u041A\u043E\u0440\u043F\u043E\u0440\u0430\u0446\u0438\u044F \u043C\u043E\u043D\u0441\u0442\u0440\u043E\u0432 "
   Sprite: {fileID: 21300000, guid: 835ce8b588c332a459c182c732f458b1, type: 3}
-  CountPoints: 10
+  CountPoints: 15

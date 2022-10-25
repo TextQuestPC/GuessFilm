@@ -23,4 +23,4 @@ MonoBehaviour:
   - Tropic Thunder
   - Ted
   Sprite: {fileID: 21300000, guid: 3881532ff58702849bc4a89ae97fdce9, type: 3}
-  CountPoints: 10
+  CountPoints: 5

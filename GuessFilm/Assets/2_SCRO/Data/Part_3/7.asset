@@ -23,4 +23,4 @@ MonoBehaviour:
   - Black Mirror
   - Narcos
   Sprite: {fileID: 21300000, guid: 022969f8fb8973b4b962269484cc4f3e, type: 3}
-  CountPoints: 10
+  CountPoints: 15

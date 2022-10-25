@@ -23,4 +23,4 @@ MonoBehaviour:
   - Mononoke-hime
   - Koe no katachi
   Sprite: {fileID: 21300000, guid: 62757c187d194e14586176f4e5d387e3, type: 3}
-  CountPoints: 10
+  CountPoints: 15

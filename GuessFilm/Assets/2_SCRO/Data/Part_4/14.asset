@@ -23,4 +23,4 @@ MonoBehaviour:
   - Shooter
   - 6 Underground
   Sprite: {fileID: 21300000, guid: b95ceb39a03094643833484ce265e2dc, type: 3}
-  CountPoints: 10
+  CountPoints: 5

@@ -23,4 +23,4 @@ MonoBehaviour:
   - John Wick
   - Tenet
   Sprite: {fileID: 21300000, guid: 0d64effbd267c514db13153bea2b0a6c, type: 3}
-  CountPoints: 10
+  CountPoints: 15

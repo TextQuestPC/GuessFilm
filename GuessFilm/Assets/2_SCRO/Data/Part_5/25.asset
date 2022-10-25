@@ -23,4 +23,4 @@ MonoBehaviour:
   - Rat Race
   - Shaft
   Sprite: {fileID: 21300000, guid: 2c854ba41a6ddb04f9a48ec4eaf17461, type: 3}
-  CountPoints: 10
+  CountPoints: 15

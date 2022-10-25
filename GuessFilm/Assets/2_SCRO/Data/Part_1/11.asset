@@ -23,4 +23,4 @@ MonoBehaviour:
   - Luca
   - Wreck-It Ralph
   Sprite: {fileID: 21300000, guid: 50c692a1d52f53542a6c852bbea01010, type: 3}
-  CountPoints: 10
+  CountPoints: 5

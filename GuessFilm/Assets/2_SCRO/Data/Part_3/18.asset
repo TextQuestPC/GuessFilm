@@ -23,4 +23,4 @@ MonoBehaviour:
   - Supernatural
   - Lost
   Sprite: {fileID: 21300000, guid: bccf67bdfa13db64884d551f4430ed20, type: 3}
-  CountPoints: 10
+  CountPoints: 15

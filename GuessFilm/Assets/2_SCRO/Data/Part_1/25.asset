@@ -23,4 +23,4 @@ MonoBehaviour:
   - The Road to El Dorado
   - Moana
   Sprite: {fileID: 21300000, guid: 85d6973b3ebd8524081b951e6fca8296, type: 3}
-  CountPoints: 10
+  CountPoints: 15

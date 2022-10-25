@@ -23,4 +23,4 @@ MonoBehaviour:
   - Infinite
   - Elysium
   Sprite: {fileID: 21300000, guid: ea27c160228a905478921cc89b2327f1, type: 3}
-  CountPoints: 10
+  CountPoints: 15

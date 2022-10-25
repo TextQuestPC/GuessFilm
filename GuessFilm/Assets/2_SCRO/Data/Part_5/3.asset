@@ -25,4 +25,4 @@ MonoBehaviour:
   - Scary Movie 4
   - We're the Millers
   Sprite: {fileID: 21300000, guid: e5a48064558acd545859201f75c8e936, type: 3}
-  CountPoints: 10
+  CountPoints: 15

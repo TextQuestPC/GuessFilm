@@ -23,4 +23,4 @@ MonoBehaviour:
   - Severance
   - Supernatural
   Sprite: {fileID: 21300000, guid: 4a6302736739e1840b13b2e09f38c66f, type: 3}
-  CountPoints: 10
+  CountPoints: 5

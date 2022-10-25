@@ -25,4 +25,4 @@ MonoBehaviour:
   - The Pursuit of Happyness
   - The Sixth Sense
   Sprite: {fileID: 21300000, guid: 7b57740f09e553a42aabb3d4a334a2ff, type: 3}
-  CountPoints: 10
+  CountPoints: 5

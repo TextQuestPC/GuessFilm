@@ -24,4 +24,4 @@ MonoBehaviour:
   - Boss Level
   - I Am Legend
   Sprite: {fileID: 21300000, guid: c38bba59876dfd747800664cceb310f3, type: 3}
-  CountPoints: 10
+  CountPoints: 15
