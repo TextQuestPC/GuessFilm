@@ -16,7 +16,7 @@ MonoBehaviour:
   PricePart: 100
   NumberPart: 2
   NamePart: "\u0424\u0438\u043B\u044C\u043C\u044B"
-  SpritePart: {fileID: 21300000, guid: 5ec6c97fefaa4c34987126ed98a96666, type: 3}
+  SpritePart: {fileID: 21300000, guid: 4be2fa626cdb96341911bb39e742ff3f, type: 3}
   PuzzlesData:
   - {fileID: 11400000, guid: f8da08797b20a174590b8048ad75e654, type: 2}
   - {fileID: 11400000, guid: ade97239d805208439d071d796a8718c, type: 2}
