@@ -28,7 +28,7 @@ namespace Core
 
         public bool CanOpenPart(int numberPart)
         {
-            int pricePart
+           // int pricePart
         }
     }
 }
