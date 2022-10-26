@@ -12,6 +12,8 @@ namespace UI
         [SerializeField] private VariantButton[] buttons;
         [SerializeField] private Image image;
 
+        private bool canClick = true;
+
         public void SetData(string[] texts, Sprite sprite)
         {
             Show();
@@ -27,10 +29,14 @@ namespace UI
             }
 
             image.sprite = sprite;
+
+            canClick = true;
         }
 
         public void SelectVariant(string text)
         {
+            canClick = false;
+
             BoxManager.GetManager<GameManager>().SelectVariantPart(text);
 
             OnSelectVariant?.Invoke();

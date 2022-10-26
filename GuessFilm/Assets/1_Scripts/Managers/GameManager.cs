@@ -29,6 +29,10 @@ namespace Core
 
         public void StartGame()
         {
+            // Если первый запуск, то беру из SCRO дату частей.
+            // Если не первый запуск и доступно сохранение, то беру из него дату, иначе из SCRO
+            // Хранить дату частей в storage и передавать в saveLoadManager для сохранения ????
+
             if (!SkipTutorial && !BoxManager.GetManager<SaveLoadManager>().GetFirstStart)
             {
                 BoxManager.GetManager<SaveLoadManager>().SaveFirstStart();
@@ -37,7 +41,7 @@ namespace Core
             }
             else
             {
-                BoxManager.GetManager<StorageManager>().SetDataOpenParts(BoxManager.GetManager<SaveLoadManager>().GetOpenParts);
+                BoxManager.GetManager<StorageManager>().SetDataOpenParts(BoxManager.GetManager<SaveLoadManager>().GetPartsData);
                 UIManager.Instance.GetWindow<UI_Window>().ShowPoints(BoxManager.GetManager<SaveLoadManager>().GetPoints);
 
                 UIManager.Instance.ShowWindow<PartsWindow>();
@@ -90,7 +94,6 @@ namespace Core
             if (texts == null)
             {
                 BoxManager.GetManager<LogManager>().LogError($"Texts variants = null! Number puzzle = {counterPuzzle}");
-
             }
             else
             {
@@ -122,7 +125,8 @@ namespace Core
 
             if (counterPuzzle >= currentPuzzles.Length)
             {
-                NextPartPuzzles();
+                UIManager.Instance.HideWindow<VariantsWindow>();
+                UIManager.Instance.ShowWindow<EndPartWindow>();
             }
             else
             {
@@ -131,6 +135,12 @@ namespace Core
         }
 
         #endregion GAMEPLAY
+
+        public void CloseEndPartWindow()
+        {
+            UIManager.Instance.HideWindow<EndPartWindow>();
+            UIManager.Instance.ShowWindow<PartsWindow>();
+        }
 
         public void ClickSettingsButton()
         {

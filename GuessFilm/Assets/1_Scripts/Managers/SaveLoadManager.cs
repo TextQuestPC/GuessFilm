@@ -1,3 +1,4 @@
+using Save;
 using UnityEngine;
 using YG;
 
@@ -7,38 +8,38 @@ namespace Core
     public class SaveLoadManager : BaseManager
     {
         private int points;
-        private bool[] openParts;
         private bool firstStart = false;
+        private SavePartData[] partsData;
 
         public int GetPoints { get => points; }
-        public bool[] GetOpenParts { get => openParts; }
         public bool GetFirstStart { get => firstStart; }
+        public SavePartData[] GetPartsData;
 
         public void LoadData()
         {
-            points = YandexGame.savesData.points;
-            openParts = YandexGame.savesData.openParts;
-            firstStart = YandexGame.savesData.FirstStart;
+            points = YandexGame.savesData.MainData.Points;
+            partsData = YandexGame.savesData.PartsData;
+            firstStart = YandexGame.savesData.MainData.FirstStart;
         }
 
         public void SavePoints(int points)
         {
-            YandexGame.savesData.points = points;
+            YandexGame.savesData.MainData.Points = points;
 
             YandexGame.SaveProgress();
         }
 
 
-        public void SaveOpenPart(bool[] openParts)
+        public void SaveOpenPart(SavePartData[] partsData)
         {
-            YandexGame.savesData.openParts = openParts;
+            YandexGame.savesData.PartsData = partsData;
 
             YandexGame.SaveProgress();
         }
 
         public void SaveFirstStart()
         {
-            YandexGame.savesData.FirstStart = true;
+            YandexGame.savesData.MainData.FirstStart = true;
 
             YandexGame.SaveProgress();
         }

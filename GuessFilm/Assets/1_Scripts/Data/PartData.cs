@@ -5,7 +5,8 @@ namespace Data
     [CreateAssetMenu(fileName = "PartData", menuName = "Data/PartData")]
     public class PartData : ScriptableObject
     {
-        public bool IsOpen = false;
+        [HideInInspector]
+        public bool IsOpen;
         public int PricePart;
         public int NumberPart;
         public string NamePart;

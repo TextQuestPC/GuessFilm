@@ -1,5 +1,6 @@
 ﻿using Data;
 using NaughtyAttributes;
+using Save;
 using UI;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ namespace Core
             currentPart = parts[0];
         }
 
-        public void SetDataOpenParts(bool[] openParts)
+        public void SetDataOpenParts(SavePartData[] openParts)
         {
             for (int i = 0; i < parts.Length; i++)
             {
@@ -31,7 +32,14 @@ namespace Core
                 }
                 else
                 {
-                    parts[i].IsOpen = openParts[i];
+                    if (i < openParts.Length - 1)
+                    {
+                        parts[i].IsOpen = openParts[i].IsOpen;
+                    }
+                    else
+                    {
+                        parts[i].IsOpen = false;
+                    }
                 }
             }
         }
@@ -77,7 +85,7 @@ namespace Core
                         openParts[i] = parts[i].IsOpen;
                     }
 
-                    BoxManager.GetManager<SaveLoadManager>().SaveOpenPart(openParts);
+                    SaveParts();
                     UIManager.Instance.GetWindow<PartsWindow>().ChangeData();
                 }
             }
@@ -85,6 +93,12 @@ namespace Core
             {
                 BoxManager.GetManager<LogManager>().LogError($"Not have part with number {numberPart}");
             }
+        }
+
+        private void SaveParts()
+        {
+            BoxManager.GetManager<SaveLoadManager>().SaveOpenPart(openParts);
+
         }
     }
 }

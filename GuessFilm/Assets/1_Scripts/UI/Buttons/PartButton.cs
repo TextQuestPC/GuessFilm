@@ -25,9 +25,9 @@ namespace UI
             namePartText.text = data.NamePart;
             imagePart.sprite = data.SpritePart;
             numberPart = data.NumberPart;
-            isOpen = data.IsOpen;
             priceText.text = data.PricePart.ToString();
             countGuess.text = "0/" + data.PuzzlesData.Length;
+            isOpen = data.IsOpen;
 
             closeObject.SetActive(!isOpen);
         }
