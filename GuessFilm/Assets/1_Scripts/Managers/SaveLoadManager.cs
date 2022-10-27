@@ -1,3 +1,4 @@
+using Data;
 using Save;
 using UnityEngine;
 using YG;
@@ -13,7 +14,7 @@ namespace Core
 
         public int GetPoints { get => points; }
         public bool GetFirstStart { get => firstStart; }
-        public SavePartData[] GetPartsData;
+        public SavePartData[] GetPartsData { get => partsData; }
 
         public void LoadData()
         {
@@ -30,8 +31,17 @@ namespace Core
         }
 
 
-        public void SaveOpenPart(SavePartData[] partsData)
+        public void SaveOpenPart(SCRO_PartData[] partsData)
         {
+            SavePartData[] savePartData = new SavePartData[partsData.Length];
+
+            for (int i = 0; i < partsData.Length; i++)
+            {
+                savePartData[i] = new SavePartData();
+                savePartData[i].ID = partsData[i].ID;
+                savePartData[i].IsOpen = partsData[i].IsOpen;
+            }
+
             YandexGame.savesData.PartsData = partsData;
 
             YandexGame.SaveProgress();

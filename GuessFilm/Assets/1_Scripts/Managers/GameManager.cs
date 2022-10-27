@@ -37,11 +37,11 @@ namespace Core
             {
                 BoxManager.GetManager<SaveLoadManager>().SaveFirstStart();
                 BoxManager.GetManager<TutorialManager>().StartSelectVariantTutor();
+
                 ClickPartGame();
             }
             else
             {
-                BoxManager.GetManager<StorageManager>().SetDataOpenParts(BoxManager.GetManager<SaveLoadManager>().GetPartsData);
                 UIManager.Instance.GetWindow<UI_Window>().ShowPoints(BoxManager.GetManager<SaveLoadManager>().GetPoints);
 
                 UIManager.Instance.ShowWindow<PartsWindow>();

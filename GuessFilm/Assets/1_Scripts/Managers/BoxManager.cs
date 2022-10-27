@@ -2,11 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Core
 {
     public class BoxManager : MonoBehaviour
     {
+        [HideInInspector]
+        public static UnityEvent OnInit;
+
         private static Dictionary<Type, object> data = new Dictionary<Type, object>();
 
         private static SCRO_SceneManagers sceneManagers;
@@ -32,6 +36,8 @@ namespace Core
 
             StartManagers();
             yield return null;
+
+            OnInit?.Invoke();
         }
 
         private static void CreateManagers()

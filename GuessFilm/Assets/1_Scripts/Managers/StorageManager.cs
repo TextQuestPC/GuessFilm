@@ -10,8 +10,9 @@ namespace Core
     public class StorageManager : BaseManager
     {
         [BoxGroup("Parts")]
-        [SerializeField] private PartData[] parts;
+        [SerializeField] private SCRO_PartData[] scro_parts;
 
+        private PartData[] parts;
         private PartData currentPart;
 
         public PartData GetCurrentPart { get => currentPart; }
@@ -19,7 +20,44 @@ namespace Core
 
         public override void OnInitialize()
         {
-            currentPart = parts[0];
+            SavePartData[] saveParts = BoxManager.GetManager<SaveLoadManager>().GetPartsData;
+
+            // Load data parts from save
+            if (saveParts.Length > 0)
+            {
+                for (int i = 0; i < saveParts.Length; i++)
+                {
+                    SCRO_PartData needPart = null;
+
+                    foreach (var scro_part in scro_parts)
+                    {
+                        if(scro_part.ID == saveParts[i].ID)
+                        {
+                            needPart = scro_part;
+                        }
+                    }
+
+                    if(needPart == null)
+                    {
+                        BoxManager.GetManager<LogManager>().LogError($"Error. Not have SCRO_PartData with id {saveParts[i].ID}. ID from SavePartData");
+                    }
+                    else
+                    {
+                        PartData partData = new PartData(saveParts[i], needPart.PricePart, needPart.NamePart, needPart.SpritePart, needPart.PuzzlesData);
+                    }
+                }
+            }
+            else // Create data parts from SCRO_PartData
+            {
+                parts = new PartData[scro_parts.Length];
+
+                for (int i = 0; i < scro_parts.Length; i++)
+                {
+                    parts[i] = new PartData(scro_parts[i]);
+                }
+
+                currentPart = parts[0];
+            }
         }
 
         public void SetDataOpenParts(SavePartData[] openParts)
@@ -48,7 +86,7 @@ namespace Core
         {
             foreach (var part in parts)
             {
-                if (part.NumberPart == numberPart)
+                if (part.ID == numberPart)
                 {
                     currentPart = part;
                     return;
@@ -60,12 +98,12 @@ namespace Core
 
         public void TryOpenPart(int numberPart)
         {
-            PartData part = null;
+            SCRO_PartData part = null;
             int points = BoxManager.GetManager<PointsManager>().GetPoints;
 
             for (int i = 0; i < parts.Length; i++)
             {
-                if (parts[i].NumberPart == numberPart)
+                if (parts[i].ID == numberPart)
                 {
                     part = parts[i];
                 }
@@ -97,8 +135,7 @@ namespace Core
 
         private void SaveParts()
         {
-            BoxManager.GetManager<SaveLoadManager>().SaveOpenPart(openParts);
-
+            BoxManager.GetManager<SaveLoadManager>().SaveOpenPart(parts);
         }
     }
 }

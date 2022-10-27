@@ -7,6 +7,6 @@ namespace Save
     {
         public int ID;
         public bool IsOpen;
-        public int[] GuessPuzzle;
+        public bool[] GuessPuzzle;
     }
 }

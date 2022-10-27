@@ -15,16 +15,6 @@ namespace Core
 
         private void Start()
         {
-            UIManager.Instance.OnInitialize();
-            UIManager.Instance.OnStart();
-
-            BoxManager.Init(sceneManagers);
-
-            BoxManager.GetManager<LogManager>().SetIsNeedLog = isLogging;
-            BoxManager.GetManager<AdManager>().SetYandexGame = YG;
-
-            BoxManager.GetManager<GameManager>().SkipTutorial = skipTutorial;
-
             AuthorizationPlayer();
         }
 
@@ -62,10 +52,34 @@ namespace Core
                 typeLanguage = TypeLanguage.Russian;
             }
 
+            // TODO: change language in UI
+
             BoxManager.GetManager<GameManager>().Language = typeLanguage;
             BoxManager.GetManager<SaveLoadManager>().LoadData();
 
             BoxManager.GetManager<AdManager>().ShowFullScreen();
+
+            InitControllers();
+        }
+
+        private void InitControllers()
+        {
+            UIManager.Instance.OnInitialize();
+            UIManager.Instance.OnStart();
+
+            BoxManager.OnInit.AddListener( AfterInitControllers);
+            BoxManager.Init(sceneManagers);            
+        }
+
+        private void AfterInitControllers()
+        {
+            BoxManager.OnInit.RemoveListener(AfterInitControllers);
+
+            BoxManager.GetManager<LogManager>().SetIsNeedLog = isLogging;
+            BoxManager.GetManager<AdManager>().SetYandexGame = YG;
+
+            BoxManager.GetManager<GameManager>().SkipTutorial = skipTutorial;
+
             BoxManager.GetManager<GameManager>().StartGame();
         }
 
