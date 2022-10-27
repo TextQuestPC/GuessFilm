@@ -20,7 +20,7 @@ namespace UI
 
             if(texts.Length < 4)
             {
-                BoxManager.GetManager<LogManager>().LogError($"Count texts < 4!");
+                LogManager.Instance.LogError($"Count texts < 4!");
             }
 
             for (int i = 0; i < texts.Length; i++)

@@ -9,7 +9,8 @@ namespace Core
     public class BoxManager : MonoBehaviour
     {
         [HideInInspector]
-        public static UnityEvent OnInit;
+        public delegate void Initialize();
+        public static Initialize OnInit;
 
         private static Dictionary<Type, object> data = new Dictionary<Type, object>();
 

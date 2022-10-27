@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7110f619eeff2847a72889d07633b70, type: 3}
   m_Name: StorageManager
   m_EditorClassIdentifier: 
-  parts:
+  scro_parts:
   - {fileID: 11400000, guid: 177bb31cd58f419478585a098d1c2008, type: 2}
   - {fileID: 11400000, guid: 3f661a4c13e42994cad58c43f5130b56, type: 2}
   - {fileID: 11400000, guid: 7c9f8655cd9132a48a2abc461b4b2537, type: 2}

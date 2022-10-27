@@ -29,10 +29,6 @@ namespace Core
 
         public void StartGame()
         {
-            // Если первый запуск, то беру из SCRO дату частей.
-            // Если не первый запуск и доступно сохранение, то беру из него дату, иначе из SCRO
-            // Хранить дату частей в storage и передавать в saveLoadManager для сохранения ????
-
             if (!SkipTutorial && !BoxManager.GetManager<SaveLoadManager>().GetFirstStart)
             {
                 BoxManager.GetManager<SaveLoadManager>().SaveFirstStart();
@@ -43,7 +39,6 @@ namespace Core
             else
             {
                 UIManager.Instance.GetWindow<UI_Window>().ShowPoints(BoxManager.GetManager<SaveLoadManager>().GetPoints);
-
                 UIManager.Instance.ShowWindow<PartsWindow>();
             }
         }
@@ -93,7 +88,7 @@ namespace Core
 
             if (texts == null)
             {
-                BoxManager.GetManager<LogManager>().LogError($"Texts variants = null! Number puzzle = {counterPuzzle}");
+                LogManager.Instance.LogError($"Texts variants = null! Number puzzle = {counterPuzzle}");
             }
             else
             {

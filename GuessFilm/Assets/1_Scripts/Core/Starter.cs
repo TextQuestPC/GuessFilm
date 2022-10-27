@@ -28,26 +28,40 @@ namespace Core
 
         private void ResolvedAuthorization()
         {
-            BoxManager.GetManager<LogManager>().Log("End Authorization");
+            LogManager.Instance.Log("End Authorization");
 
-            AfterAuthorization();
+            InitControllers();
         }
 
         private void RejectedAuthorization()
         {
-            BoxManager.GetManager<LogManager>().Log("ERROR Authorization");
+            LogManager.Instance.Log("ERROR Authorization");
 
-            AfterAuthorization();
+            InitControllers();
         }
 
-        private void AfterAuthorization()
+        private void InitControllers()
         {
             YandexGame.SwitchLangEvent += SwitchLanguage;
+
+            UIManager.Instance.OnInitialize();
+            UIManager.Instance.OnStart();
+
+            BoxManager.OnInit += AfterInitControllers;
+            BoxManager.Init(sceneManagers);
+        }
+
+        private void AfterInitControllers()
+        {
+            BoxManager.OnInit -= AfterInitControllers;
+
+            LogManager.Instance.SetIsNeedLog = isLogging;
+            BoxManager.GetManager<AdManager>().SetYandexGame = YG;
 
             TypeLanguage typeLanguage = TypeLanguage.English;
             string language = YandexGame.savesData.language;
 
-            if(language == "ru")
+            if (language == "ru")
             {
                 typeLanguage = TypeLanguage.Russian;
             }
@@ -55,31 +69,10 @@ namespace Core
             // TODO: change language in UI
 
             BoxManager.GetManager<GameManager>().Language = typeLanguage;
-            BoxManager.GetManager<SaveLoadManager>().LoadData();
 
             BoxManager.GetManager<AdManager>().ShowFullScreen();
 
-            InitControllers();
-        }
-
-        private void InitControllers()
-        {
-            UIManager.Instance.OnInitialize();
-            UIManager.Instance.OnStart();
-
-            BoxManager.OnInit.AddListener( AfterInitControllers);
-            BoxManager.Init(sceneManagers);            
-        }
-
-        private void AfterInitControllers()
-        {
-            BoxManager.OnInit.RemoveListener(AfterInitControllers);
-
-            BoxManager.GetManager<LogManager>().SetIsNeedLog = isLogging;
-            BoxManager.GetManager<AdManager>().SetYandexGame = YG;
-
             BoxManager.GetManager<GameManager>().SkipTutorial = skipTutorial;
-
             BoxManager.GetManager<GameManager>().StartGame();
         }
 

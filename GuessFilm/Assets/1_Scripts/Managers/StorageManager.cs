@@ -23,7 +23,7 @@ namespace Core
             SavePartData[] saveParts = BoxManager.GetManager<SaveLoadManager>().GetPartsData;
 
             // Load data parts from save
-            if (saveParts.Length > 0)
+            if (saveParts !=null && saveParts.Length > 0)
             {
                 for (int i = 0; i < saveParts.Length; i++)
                 {
@@ -31,7 +31,7 @@ namespace Core
 
                     foreach (var scro_part in scro_parts)
                     {
-                        if(scro_part.ID == saveParts[i].ID)
+                        if(scro_part.ID == saveParts[i].Id)
                         {
                             needPart = scro_part;
                         }
@@ -39,7 +39,7 @@ namespace Core
 
                     if(needPart == null)
                     {
-                        BoxManager.GetManager<LogManager>().LogError($"Error. Not have SCRO_PartData with id {saveParts[i].ID}. ID from SavePartData");
+                        LogManager.Instance.LogError($"Error. Not have SCRO_PartData with id {saveParts[i].Id}. ID from SavePartData");
                     }
                     else
                     {
@@ -60,50 +60,28 @@ namespace Core
             }
         }
 
-        public void SetDataOpenParts(SavePartData[] openParts)
-        {
-            for (int i = 0; i < parts.Length; i++)
-            {
-                if (parts[i].PricePart == 0)
-                {
-                    parts[i].IsOpen = true;
-                }
-                else
-                {
-                    if (i < openParts.Length - 1)
-                    {
-                        parts[i].IsOpen = openParts[i].IsOpen;
-                    }
-                    else
-                    {
-                        parts[i].IsOpen = false;
-                    }
-                }
-            }
-        }
-
         public void SelectNewPart(int numberPart)
         {
             foreach (var part in parts)
             {
-                if (part.ID == numberPart)
+                if (part.Id == numberPart)
                 {
                     currentPart = part;
                     return;
                 }
             }
 
-            BoxManager.GetManager<LogManager>().LogError($"Not have part with number {numberPart}");
+            LogManager.Instance.LogError($"Not have part with number {numberPart}");
         }
 
         public void TryOpenPart(int numberPart)
         {
-            SCRO_PartData part = null;
+            PartData part = null;
             int points = BoxManager.GetManager<PointsManager>().GetPoints;
 
             for (int i = 0; i < parts.Length; i++)
             {
-                if (parts[i].ID == numberPart)
+                if (parts[i].Id == numberPart)
                 {
                     part = parts[i];
                 }
@@ -115,7 +93,7 @@ namespace Core
                 {
                     BoxManager.GetManager<PointsManager>().SubtractPoints(part.PricePart);
 
-                    part.IsOpen = true;
+                    part.SetIsOpen(true);
                     bool[] openParts = new bool[parts.Length];
 
                     for (int i = 0; i < parts.Length; i++)
@@ -129,7 +107,7 @@ namespace Core
             }
             else
             {
-                BoxManager.GetManager<LogManager>().LogError($"Not have part with number {numberPart}");
+                LogManager.Instance.LogError($"Not have part with number {numberPart}");
             }
         }
 

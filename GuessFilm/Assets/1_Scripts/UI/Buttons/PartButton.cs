@@ -20,11 +20,11 @@ namespace UI
             partsWindow = GetComponentInParent<PartsWindow>();
         }
 
-        public void SetData(SCRO_PartData data)
+        public void SetData(PartData data)
         {
             namePartText.text = data.NamePart;
             imagePart.sprite = data.SpritePart;
-            numberPart = data.ID;
+            numberPart = data.Id;
             priceText.text = data.PricePart.ToString();
             countGuess.text = "0/" + data.PuzzlesData.Length;
             isOpen = data.IsOpen;

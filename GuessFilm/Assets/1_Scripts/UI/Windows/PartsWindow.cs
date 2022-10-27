@@ -27,7 +27,7 @@ namespace UI
 
         public void ChangeData()
         {
-            SCRO_PartData[] parts = BoxManager.GetManager<StorageManager>().GetAllParts;
+            PartData[] parts = BoxManager.GetManager<StorageManager>().GetAllParts;
 
             for (int i = 0; i < partButtons.Length; i++)
             {

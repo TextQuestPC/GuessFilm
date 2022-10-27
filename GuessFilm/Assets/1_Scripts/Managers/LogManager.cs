@@ -3,21 +3,23 @@ using UnityEngine;
 
 namespace Core
 {
-    [CreateAssetMenu(fileName = "LogManager", menuName = "Managers/LogManager")]
-    public class LogManager : BaseManager
+    public class LogManager : Singleton<LogManager>
     {
         private bool isNeedLog = false;
+
+        [SerializeField] private LogWindow logWindow;
+
+        protected override void AfterAwaik()
+        {
+            logWindow.OnInitialize();
+            logWindow.OnStart();
+        }
 
         public bool SetIsNeedLog
         {
             set 
             { 
                 isNeedLog = value;
-
-                if (value)
-                {
-                    UIManager.Instance.ShowWindow<LogWindow>();
-                }
             }
         }
 
@@ -27,7 +29,7 @@ namespace Core
             {
                 Debug.Log(message);
 
-                UIManager.Instance.GetWindow<LogWindow>().Log(message);
+                logWindow.Log(message);
             }
         }
 
@@ -37,7 +39,7 @@ namespace Core
             {
                 Debug.Log($"<color=red>{error}</color>");
 
-                UIManager.Instance.GetWindow<LogWindow>().LogError(error);
+                logWindow.LogError(error);
             }
         }
     }

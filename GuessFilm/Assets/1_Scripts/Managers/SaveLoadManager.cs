@@ -16,11 +16,19 @@ namespace Core
         public bool GetFirstStart { get => firstStart; }
         public SavePartData[] GetPartsData { get => partsData; }
 
-        public void LoadData()
+        public override void OnInitialize()
         {
-            points = YandexGame.savesData.MainData.Points;
-            partsData = YandexGame.savesData.PartsData;
-            firstStart = YandexGame.savesData.MainData.FirstStart;
+            if(YandexGame.savesData.MainData != null)
+            {
+                points = YandexGame.savesData.MainData.Points;
+                partsData = YandexGame.savesData.PartsData;
+                firstStart = YandexGame.savesData.MainData.FirstStart;
+
+                Debug.Log("ПРоверяем какая дата пришла из сохранения");
+                Debug.Log($"points = {points}");
+                Debug.Log($"partsData = {partsData}");
+                Debug.Log($"firstStart = {firstStart}");
+            }
         }
 
         public void SavePoints(int points)
@@ -30,28 +38,28 @@ namespace Core
             YandexGame.SaveProgress();
         }
 
-
-        public void SaveOpenPart(SCRO_PartData[] partsData)
+        public void SaveOpenPart(PartData[] partsData)
         {
             SavePartData[] savePartData = new SavePartData[partsData.Length];
 
             for (int i = 0; i < partsData.Length; i++)
             {
                 savePartData[i] = new SavePartData();
-                savePartData[i].ID = partsData[i].ID;
+                savePartData[i].Id = partsData[i].Id;
                 savePartData[i].IsOpen = partsData[i].IsOpen;
+                savePartData[i].GuessPuzzle = partsData[i].GuessPuzzle;
             }
 
-            YandexGame.savesData.PartsData = partsData;
-
+            YandexGame.savesData.PartsData = savePartData;
             YandexGame.SaveProgress();
         }
 
         public void SaveFirstStart()
         {
             YandexGame.savesData.MainData.FirstStart = true;
-
             YandexGame.SaveProgress();
         }
+
+        сделать сохранение на yandex и локальное для ПК
     }
 }

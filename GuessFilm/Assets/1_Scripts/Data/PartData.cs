@@ -26,7 +26,7 @@ namespace Data
 
         public PartData(SavePartData saveData, int pricePart, string namePart, Sprite spritePart, PuzzleData[] puzzleData)
         {
-            Id = saveData.ID;
+            Id = saveData.Id;
             IsOpen = saveData.IsOpen;
             GuessPuzzle = saveData.GuessPuzzle;
             PricePart = pricePart;
@@ -38,6 +38,11 @@ namespace Data
         public void AddGuessPuzzle(int number)
         {
             GuessPuzzle[number] = true;
+        }
+
+        public void SetIsOpen(bool value)
+        {
+            IsOpen = value;
         }
     }
 }
