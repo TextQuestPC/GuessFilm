@@ -77,7 +77,7 @@ namespace SaveSystem
                 if (File.Exists(Application.persistentDataPath + SAVE_NAME))
                 {
                     string strLoadJson = File.ReadAllText(Application.persistentDataPath + SAVE_NAME);
-                    SaveData saveData = JsonUtility.FromJson<SaveData>(strLoadJson);
+                    saveData = JsonUtility.FromJson<SaveData>(strLoadJson);
                 }
             }
 

@@ -21,6 +21,7 @@ namespace Core
         public override void OnInitialize()
         {
             SavePartData[] saveParts = SaveLoadManager.Instance.GetPartsData();
+            parts = new PartData[scro_parts.Length];
 
             // Load data parts from save
             if (saveParts != null && saveParts.Length > 0)
@@ -43,14 +44,12 @@ namespace Core
                     }
                     else
                     {
-                        PartData partData = new PartData(saveParts[i], needPart.PricePart, needPart.NamePart, needPart.SpritePart, needPart.PuzzlesData);
+                        parts[i] = new PartData(saveParts[i], needPart.PricePart, needPart.NamePart, needPart.SpritePart, needPart.PuzzlesData);                         
                     }
                 }
             }
             else // Create data parts from SCRO_PartData
             {
-                parts = new PartData[scro_parts.Length];
-
                 for (int i = 0; i < scro_parts.Length; i++)
                 {
                     parts[i] = new PartData(scro_parts[i]);
@@ -58,6 +57,9 @@ namespace Core
 
                 currentPart = parts[0];
             }
+
+            Debug.Log($"saveParts = {parts} length = {parts.Length}");
+
         }
 
         public void SelectNewPart(int numberPart)

@@ -30,22 +30,20 @@ namespace Core
 
         public void StartGame()
         {
-            if (!SkipTutorial && SaveLoadManager.Instance.GetFirstStart())
+            if (SaveLoadManager.Instance.GetFirstStart())
             {
-                SaveLoadManager.Instance.Save();
-                BoxManager.GetManager<TutorialManager>().StartSelectVariantTutor();
-
-                ClickPartGame();
+                UIManager.Instance.ShowWindow<PartsWindow>();               
             }
             else
             {
-                UIManager.Instance.GetWindow<UI_Window>().ShowPoints(SaveLoadManager.Instance.GetPoints());
-                UIManager.Instance.ShowWindow<PartsWindow>();
+                BoxManager.GetManager<StorageManager>().SelectNewPart(0);
+                ClickPartGame();
             }
         }
 
         public void ClickPartGame()
         {
+            UIManager.Instance.GetWindow<UI_Window>().ShowPoints(SaveLoadManager.Instance.GetPoints());
             UIManager.Instance.HideWindow<PartsWindow>();
 
             NextPartPuzzles();

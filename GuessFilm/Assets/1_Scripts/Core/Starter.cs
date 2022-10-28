@@ -30,7 +30,7 @@ namespace Core
         {
             LogManager.Instance.Log("End Authorization");
 
-            InitControllers();
+            LoadData();
         }
 
         private void RejectedAuthorization()

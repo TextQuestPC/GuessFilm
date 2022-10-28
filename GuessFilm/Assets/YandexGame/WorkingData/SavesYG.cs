@@ -9,6 +9,5 @@ namespace YG
         public string language = "ru";
 
         public SaveData SaveData;
-        public SavePartData[] PartsData;
     }
 }
