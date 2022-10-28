@@ -1,4 +1,5 @@
 using Data;
+using SaveSystem;
 using UI;
 using UnityEngine;
 
@@ -29,16 +30,16 @@ namespace Core
 
         public void StartGame()
         {
-            if (!SkipTutorial && !BoxManager.GetManager<SaveLoadManager>().GetFirstStart)
+            if (!SkipTutorial && SaveLoadManager.Instance.GetFirstStart())
             {
-                BoxManager.GetManager<SaveLoadManager>().SaveFirstStart();
+                SaveLoadManager.Instance.Save();
                 BoxManager.GetManager<TutorialManager>().StartSelectVariantTutor();
 
                 ClickPartGame();
             }
             else
             {
-                UIManager.Instance.GetWindow<UI_Window>().ShowPoints(BoxManager.GetManager<SaveLoadManager>().GetPoints);
+                UIManager.Instance.GetWindow<UI_Window>().ShowPoints(SaveLoadManager.Instance.GetPoints());
                 UIManager.Instance.ShowWindow<PartsWindow>();
             }
         }

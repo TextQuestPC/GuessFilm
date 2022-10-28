@@ -1,10 +1,11 @@
 using System;
 
-namespace Save
+namespace SaveSystem
 {
     [Serializable]
-    public class SaveMainData
+    public class SaveData
     {
+        public SavePartData[] PartsData;
         public int Points = 0;
         public bool FirstStart = false;
     }

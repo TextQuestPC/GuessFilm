@@ -11,7 +11,6 @@ namespace Core
 
 
         private AuidoData data;
-        private SaveLoadManager save;
 
 
 
@@ -19,6 +18,7 @@ namespace Core
         {
             source.PlayOneShot(audioClips[index], 1);
         }
+
         public void MuteSound(int index)
         {
             source.clip = audioClips[index];
@@ -31,16 +31,11 @@ namespace Core
             source = (new GameObject()).AddComponent<AudioSource>();
             source.gameObject.name = "Audio";
             PlaySound(0);
-            save = BoxManager.GetManager<SaveLoadManager>();
-            //data = save.Load<AuidoData>("AudioManager");
         }
+
         public override void OnInitialize()
         {
             base.OnInitialize();
-        }
-        private void OnDestroy()
-        {
-            //save.Save("AudioManager",data);
         }
     }
 

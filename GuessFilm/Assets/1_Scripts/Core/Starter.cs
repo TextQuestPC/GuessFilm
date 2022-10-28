@@ -1,4 +1,5 @@
 using Data;
+using SaveSystem;
 using UI;
 using UnityEngine;
 using YG;
@@ -10,8 +11,7 @@ namespace Core
         [SerializeField] YandexGame YG;
 
         [SerializeField] private SCRO_SceneManagers sceneManagers;
-        [SerializeField] private bool isLogging;
-        [SerializeField] private bool skipTutorial;
+        [SerializeField] private bool isLogging, skipTutorial, saveInYandex;
 
         private void Start()
         {
@@ -37,11 +37,20 @@ namespace Core
         {
             LogManager.Instance.Log("ERROR Authorization");
 
-            InitControllers();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            SaveLoadManager.Instance.OnLoad.AddListener(InitControllers);
+            SaveLoadManager.Instance.SetSaveInYandex = saveInYandex;
+            SaveLoadManager.Instance.LoadData();
         }
 
         private void InitControllers()
         {
+            SaveLoadManager.Instance.OnLoad.RemoveListener(InitControllers);
+
             YandexGame.SwitchLangEvent += SwitchLanguage;
 
             UIManager.Instance.OnInitialize();

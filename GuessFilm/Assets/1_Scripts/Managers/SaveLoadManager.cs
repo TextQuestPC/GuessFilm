@@ -1,45 +1,126 @@
+using Core;
 using Data;
-using Save;
+using SaveSystem;
+using System;
+using System.IO;
 using UnityEngine;
+using UnityEngine.Events;
 using YG;
 
-namespace Core
+namespace SaveSystem
 {
-    [CreateAssetMenu(fileName = "SaveLoadManager", menuName = "Managers/SaveLoadManager")]
-    public class SaveLoadManager : BaseManager
+    public class SaveLoadManager : Singleton<SaveLoadManager>
     {
-        private int points;
-        private bool firstStart = false;
-        private SavePartData[] partsData;
+        private const string SAVE_NAME = "Save.json"; // C:\Users\unity\AppData\LocalLow\DefaultCompany
 
-        public int GetPoints { get => points; }
-        public bool GetFirstStart { get => firstStart; }
-        public SavePartData[] GetPartsData { get => partsData; }
+        public UnityEvent OnLoad;
 
-        public override void OnInitialize()
+        private bool saveInYandex;
+        private SaveData saveData;
+
+        public int GetPoints()
         {
-            if(YandexGame.savesData.MainData != null)
+            if(saveData == null)
             {
-                points = YandexGame.savesData.MainData.Points;
-                partsData = YandexGame.savesData.PartsData;
-                firstStart = YandexGame.savesData.MainData.FirstStart;
-
-                Debug.Log("ПРоверяем какая дата пришла из сохранения");
-                Debug.Log($"points = {points}");
-                Debug.Log($"partsData = {partsData}");
-                Debug.Log($"firstStart = {firstStart}");
+                return 0;
+            }
+            else
+            {
+                return saveData.Points;
             }
         }
 
-        public void SavePoints(int points)
+        public bool GetFirstStart()
         {
-            YandexGame.savesData.MainData.Points = points;
-
-            YandexGame.SaveProgress();
+            if (saveData == null)
+            {
+                return false;
+            }
+            else
+            {
+                return saveData.FirstStart;
+            }
         }
 
-        public void SaveOpenPart(PartData[] partsData)
+        public SavePartData[] GetPartsData()
         {
+            if (saveData == null)
+            {
+                return null;
+            }
+            else
+            {
+                return saveData.PartsData;
+            }
+        }
+
+        public bool SetSaveInYandex { set => saveInYandex = value; }
+
+        public void LoadData()
+        {
+            if (saveInYandex)
+            {
+                if (YandexGame.savesData.SaveData != null)
+                {
+                    saveData = YandexGame.savesData.SaveData;
+
+                    Debug.Log("ПРоверяем какая дата пришла из сохранения");
+                    Debug.Log($"points = {saveData.Points}");
+                    Debug.Log($"partsData = {saveData.PartsData}");
+                    Debug.Log($"firstStart = {saveData.FirstStart}");
+                }
+            }
+            else
+            {
+                // Local load data
+
+                if (File.Exists(Application.persistentDataPath + SAVE_NAME))
+                {
+                    string strLoadJson = File.ReadAllText(Application.persistentDataPath + SAVE_NAME);
+                    SaveData saveData = JsonUtility.FromJson<SaveData>(strLoadJson);
+                }
+            }
+
+            OnLoad?.Invoke();
+        }
+
+        public void Save()
+        {
+            int points = BoxManager.GetManager<PointsManager>().GetPoints;
+            bool firstStart = true;
+
+            if (saveInYandex)
+            {
+                YandexGame.savesData.SaveData.PartsData = GeneratePartsData();
+                YandexGame.savesData.SaveData.Points = points;
+                YandexGame.savesData.SaveData.FirstStart = firstStart;
+
+                YandexGame.SaveProgress();
+            }
+            else
+            {
+                SaveData saveData = new SaveData();
+                saveData.PartsData = GeneratePartsData();
+                saveData.Points = points;
+                saveData.FirstStart = firstStart;
+
+                string jsonString = JsonUtility.ToJson(saveData);
+
+                try
+                {
+                    File.WriteAllText(Application.persistentDataPath + SAVE_NAME, jsonString);
+                }
+                catch (Exception ex)
+                {
+                    LogManager.Instance.LogError($"Error save SaveOpenPart - {ex}");
+                }
+            }
+        }
+
+        private SavePartData[] GeneratePartsData()
+        {
+            PartData[] partsData = BoxManager.GetManager<StorageManager>().GetAllParts;
+
             SavePartData[] savePartData = new SavePartData[partsData.Length];
 
             for (int i = 0; i < partsData.Length; i++)
@@ -50,16 +131,7 @@ namespace Core
                 savePartData[i].GuessPuzzle = partsData[i].GuessPuzzle;
             }
 
-            YandexGame.savesData.PartsData = savePartData;
-            YandexGame.SaveProgress();
+            return savePartData;
         }
-
-        public void SaveFirstStart()
-        {
-            YandexGame.savesData.MainData.FirstStart = true;
-            YandexGame.SaveProgress();
-        }
-
-        сделать сохранение на yandex и локальное для ПК
     }
 }

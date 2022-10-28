@@ -1,4 +1,4 @@
-﻿using Save;
+﻿using SaveSystem;
 
 namespace YG
 {
@@ -8,7 +8,7 @@ namespace YG
         public bool isFirstSession = true;
         public string language = "ru";
 
-        public SaveMainData MainData;
+        public SaveData SaveData;
         public SavePartData[] PartsData;
     }
 }

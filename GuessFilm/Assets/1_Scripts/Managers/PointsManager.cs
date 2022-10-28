@@ -1,3 +1,4 @@
+using SaveSystem;
 using UI;
 using UnityEngine;
 
@@ -15,7 +16,7 @@ namespace Core
             points += value;
 
             UIManager.Instance.GetWindow<UI_Window>().ShowPoints(points);
-            BoxManager.GetManager<SaveLoadManager>().SavePoints(points);
+            SaveLoadManager.Instance.Save();
         }
 
         public void SubtractPoints(int value)
@@ -23,7 +24,7 @@ namespace Core
             points -= value;
 
             UIManager.Instance.GetWindow<UI_Window>().ShowPoints(points);
-            BoxManager.GetManager<SaveLoadManager>().SavePoints(points);
+            SaveLoadManager.Instance.Save();
         }
 
         public bool CanOpenPart(int numberPart)

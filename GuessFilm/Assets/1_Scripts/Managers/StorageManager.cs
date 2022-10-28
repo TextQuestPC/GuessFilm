@@ -1,6 +1,6 @@
 ﻿using Data;
 using NaughtyAttributes;
-using Save;
+using SaveSystem;
 using UI;
 using UnityEngine;
 
@@ -20,10 +20,10 @@ namespace Core
 
         public override void OnInitialize()
         {
-            SavePartData[] saveParts = BoxManager.GetManager<SaveLoadManager>().GetPartsData;
+            SavePartData[] saveParts = SaveLoadManager.Instance.GetPartsData();
 
             // Load data parts from save
-            if (saveParts !=null && saveParts.Length > 0)
+            if (saveParts != null && saveParts.Length > 0)
             {
                 for (int i = 0; i < saveParts.Length; i++)
                 {
@@ -31,13 +31,13 @@ namespace Core
 
                     foreach (var scro_part in scro_parts)
                     {
-                        if(scro_part.ID == saveParts[i].Id)
+                        if (scro_part.ID == saveParts[i].Id)
                         {
                             needPart = scro_part;
                         }
                     }
 
-                    if(needPart == null)
+                    if (needPart == null)
                     {
                         LogManager.Instance.LogError($"Error. Not have SCRO_PartData with id {saveParts[i].Id}. ID from SavePartData");
                     }
@@ -113,7 +113,7 @@ namespace Core
 
         private void SaveParts()
         {
-            BoxManager.GetManager<SaveLoadManager>().SaveOpenPart(parts);
+            BoxManager.GetManager<SaveLoadManager>().Save();
         }
     }
 }

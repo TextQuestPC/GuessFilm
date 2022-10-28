@@ -1,6 +1,6 @@
 using System;
 
-namespace Save
+namespace SaveSystem
 {
     [Serializable]
     public class SavePartData 
