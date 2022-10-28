@@ -57,9 +57,6 @@ namespace Core
 
                 currentPart = parts[0];
             }
-
-            Debug.Log($"saveParts = {parts} length = {parts.Length}");
-
         }
 
         public void SelectNewPart(int numberPart)
