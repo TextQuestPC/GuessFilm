@@ -7,9 +7,10 @@ namespace UI
 {
     public class PartButton : MyButton
     {
-        [SerializeField] private Image imagePart;
-        [SerializeField] private GameObject selectObject, closeObject;
+        [SerializeField] private Image imagePart, substrateImage, closeImage;
         [SerializeField] private Text namePartText, priceText, buyText, countGuess;
+        [SerializeField] private Slider sliderGuess;
+        [SerializeField] private Color defaultColor, selectedColor;
 
         private PartsWindow partsWindow;
         private int numberPart;
@@ -26,20 +27,20 @@ namespace UI
             imagePart.sprite = data.SpritePart;
             numberPart = data.Id;
             priceText.text = data.PricePart.ToString();
-            countGuess.text = "0/" + data.PuzzlesData.Length;
+            countGuess.text = $"{data.GuessPuzzle}/{data.PuzzlesData.Length}";
             isOpen = data.IsOpen;
 
-            closeObject.SetActive(!isOpen);
+            closeImage.gameObject.SetActive(!isOpen);
         }
 
         public void SelectButton()
         {
-            selectObject.SetActive(true);
+            substrateImage.color = selectedColor;
         }
 
         public void CancelSelectButton()
         {
-            selectObject.SetActive(false);
+            substrateImage.color = defaultColor;
         }
 
         protected override void OnClickButton()
