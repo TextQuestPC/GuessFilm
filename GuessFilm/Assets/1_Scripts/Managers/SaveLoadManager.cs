@@ -13,6 +13,7 @@ namespace SaveSystem
     {
         private const string SAVE_NAME = "Save.json"; // C:\Users\unity\AppData\LocalLow\DefaultCompany
 
+        [HideInInspector]
         public UnityEvent OnLoad;
 
         private bool saveInYandex;
