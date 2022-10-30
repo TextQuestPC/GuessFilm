@@ -7,8 +7,9 @@ namespace UI
 {
     public class PartsWindow : Window
     {
-        [SerializeField]private PartButton[] partButtons;
+        [SerializeField] private PartButton[] partButtons;
         [SerializeField] private Button startGameButton;
+        [SerializeField] private Text pointsText;
 
         private PartButton currentButton;
 
@@ -23,6 +24,7 @@ namespace UI
 
             currentButton = partButtons[0];
             currentButton.SelectButton();
+            pointsText.text = BoxManager.GetManager<PointsManager>().GetPoints.ToString();
         }
 
         public void ChangeData()

@@ -6,6 +6,8 @@ namespace UI
     [RequireComponent(typeof(Button))]
     public class VariantButton : MyButton
     {
+        [SerializeField] private Sprite defaultSprite, greenSprite, redSprite;
+
         private VariantsWindow variantsWindow;
         private Text variantText;
 

@@ -28,6 +28,8 @@ namespace UI
             numberPart = data.Id;
             priceText.text = data.PricePart.ToString();
             countGuess.text = $"{data.GuessPuzzle.Length}/{data.PuzzlesData.Length}";
+            sliderGuess.maxValue = data.PuzzlesData.Length;
+            sliderGuess.value = data.GuessPuzzle.Length;
             isOpen = data.IsOpen;
 
             closeImage.gameObject.SetActive(!isOpen);

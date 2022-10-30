@@ -147,7 +147,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 6ee765d7809844ad1933b2788d7929bc, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 3
 --- !u!114 &7020718812260060919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,3 +213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3da812ca38dd7e4c91c65c29d78e5fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300000, guid: 6ee765d7809844ad1933b2788d7929bc, type: 3}
+  greenSprite: {fileID: 21300000, guid: d08f60ef09739438ca3ab0cde6f4720f, type: 3}
+  redSprite: {fileID: 21300000, guid: 791c526937096414e963087cf56599d7, type: 3}
