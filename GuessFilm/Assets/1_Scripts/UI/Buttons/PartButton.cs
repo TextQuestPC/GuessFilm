@@ -8,7 +8,7 @@ namespace UI
     public class PartButton : MyButton
     {
         [SerializeField] private Image imagePart, substrateImage, closeImage;
-        [SerializeField] private Text namePartText, priceText, buyText, countGuess;
+        [SerializeField] private Text namePartText, priceText, countGuess, labelBuyText;
         [SerializeField] private Slider sliderGuess;
         [SerializeField] private Color defaultColor, selectedColor;
 
@@ -27,10 +27,11 @@ namespace UI
             imagePart.sprite = data.SpritePart;
             numberPart = data.Id;
             priceText.text = data.PricePart.ToString();
-            countGuess.text = $"{data.GuessPuzzle}/{data.PuzzlesData.Length}";
+            countGuess.text = $"{data.GuessPuzzle.Length}/{data.PuzzlesData.Length}";
             isOpen = data.IsOpen;
 
             closeImage.gameObject.SetActive(!isOpen);
+            sliderGuess.gameObject.SetActive(isOpen);
         }
 
         public void SelectButton()
