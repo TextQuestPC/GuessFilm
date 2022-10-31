@@ -1,5 +1,6 @@
 using Data;
 using SaveSystem;
+using System.Collections;
 using UI;
 using UnityEngine;
 
@@ -59,6 +60,11 @@ namespace Core
                 BoxManager.GetManager<PointsManager>().AddPoints(countPoints);
             }
 
+            UIManager.Instance.GetWindow<VariantsWindow>().ShowWinVariant(currentVariant);
+        }
+
+        public void AfterShowWinVariant()
+        {
             AfterSelectVariant();
         }
 
@@ -92,7 +98,7 @@ namespace Core
             else
             {
                 texts = Shuffle(texts);
-                UIManager.Instance.GetWindow<VariantsWindow>().SetData(texts, data.Sprite);
+                UIManager.Instance.GetWindow<VariantsWindow>().SetData(texts, data.Sprite, counterPuzzle > 0);
             }
         }
 
