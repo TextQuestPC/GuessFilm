@@ -30,7 +30,7 @@ namespace UI
                 buttons[i].SetData(texts[i]);
             }
 
-            image.sprite = sprite;
+            image2.sprite = sprite;
 
             if (needLeaf)
             {
@@ -47,8 +47,8 @@ namespace UI
         private IEnumerator CoLeafImages(Sprite sprite)
         {
             imagesAnimator.SetTrigger("Leaf");
-            yield return new WaitForSeconds(1f);
-            image2.sprite = sprite;
+            yield return new WaitForSeconds(0.5f);
+            image.sprite = sprite;
         }
 
         public void SelectVariant(string text)
