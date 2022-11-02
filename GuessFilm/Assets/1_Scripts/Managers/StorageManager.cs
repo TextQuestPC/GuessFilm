@@ -44,7 +44,25 @@ namespace Core
                     }
                     else
                     {
-                        parts[i] = new PartData(saveParts[i], needPart.PricePart, needPart.NamePart, needPart.SpritePart, needPart.PuzzlesData);                         
+                        parts[i] = new PartData(saveParts[i], needPart.PricePart, needPart.NamePart, needPart.SpritePart, needPart.PuzzlesData);
+                    }
+                }
+
+                foreach (var part in parts)
+                {
+                    if (part.IsOpen)
+                    {
+                        if (currentPart == null)
+                        {
+                            currentPart = part;
+                        }
+                        else
+                        {
+                            if (currentPart.Id < part.Id)
+                            {
+                                currentPart = part;
+                            }
+                        }
                     }
                 }
             }

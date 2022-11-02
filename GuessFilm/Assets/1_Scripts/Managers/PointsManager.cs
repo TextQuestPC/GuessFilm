@@ -11,11 +11,18 @@ namespace Core
 
         public int GetPoints { get => points; }
 
+        public override void OnInitialize()
+        {
+            points = SaveLoadManager.Instance.GetPoints();
+        }
+
         public void AddPoints(int value)
         {
             points += value;
 
-            UIManager.Instance.GetWindow<UI_Window>().ShowPoints(points);
+            int countStars = value / 5;
+
+            UIManager.Instance.GetWindow<UI_Window>().ShowUpPoints(points, countStars);
             SaveLoadManager.Instance.Save();
         }
 
@@ -23,7 +30,7 @@ namespace Core
         {
             points -= value;
 
-            UIManager.Instance.GetWindow<UI_Window>().ShowPoints(points);
+            UIManager.Instance.GetWindow<UI_Window>().ShowDownPoints(points);
             SaveLoadManager.Instance.Save();
         }
 
