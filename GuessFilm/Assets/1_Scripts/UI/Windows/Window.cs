@@ -30,6 +30,8 @@ namespace UI
 
         public void OnInitialize()
         {
+            background = gameObject.transform.GetChild(0).gameObject;
+
             SetAnimator();
 
             if (haveAnimation)
@@ -44,7 +46,6 @@ namespace UI
 
         public void OnStart()
         {
-            background = gameObject.transform.GetChild(0).gameObject;
             buttonClose = GetComponentInChildren<CloseButton>();
         }
 
@@ -61,7 +62,7 @@ namespace UI
 
         private void SetAnimator()
         {
-            if (TryGetComponent(out Animator animator))
+            if (background.TryGetComponent(out Animator animator))
             {
                 this.animator = animator;
                 haveAnimation = true;
@@ -74,7 +75,7 @@ namespace UI
 
         private void SetAnimationTime()
         {
-            AnimationClip[] animations = gameObject.GetComponent<Animator>().runtimeAnimatorController.animationClips;
+            AnimationClip[] animations = background.GetComponent<Animator>().runtimeAnimatorController.animationClips;
 
             foreach (var anim in animations)
             {
@@ -152,13 +153,12 @@ namespace UI
             }
             else
             {
-                background.SetActive(false);
-
                 IsActive = false;
                 BeforeHide();
 
                 if (haveAnimation)
                 {
+                    Debug.Log($"time hide ={timeHide}");
                     StartCoroutine(CoShowAnimation(TypeAnimation.Hide, () => { AfterAnimationHide(); }));
                 }
                 else
@@ -176,6 +176,8 @@ namespace UI
 
         private void AfterAnimationHide()
         {
+            background.SetActive(false);
+
             AfterHide();
             EndHide?.Invoke(this);
         }
