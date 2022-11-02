@@ -17,7 +17,7 @@ namespace UI
             startGameButton.onClick.AddListener(ClickStartGame);
         }
 
-        protected override void AfterShow()
+        protected override void BeforeShow()
         {
             ChangeData();
 

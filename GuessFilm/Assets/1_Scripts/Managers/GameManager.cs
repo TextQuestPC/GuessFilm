@@ -3,6 +3,7 @@ using SaveSystem;
 using System.Collections;
 using UI;
 using UnityEngine;
+using static UI.Window;
 
 namespace Core
 {
@@ -33,7 +34,7 @@ namespace Core
         {
             if (SaveLoadManager.Instance.GetFirstStart())
             {
-                UIManager.Instance.ShowWindow<PartsWindow>();               
+                UIManager.Instance.ShowWindow<PartsWindow>();
             }
             else
             {
@@ -125,8 +126,13 @@ namespace Core
 
             if (counterPuzzle >= currentPuzzles.Length)
             {
+                UIManager.Instance.GetWindow<VariantsWindow>().EndHide.AddListener((Window window) =>
+                {
+                    UIManager.Instance.ShowWindow<EndPartWindow>();
+                    window.EndHide.RemoveAllListeners();
+                });
+
                 UIManager.Instance.HideWindow<VariantsWindow>();
-                UIManager.Instance.ShowWindow<EndPartWindow>();
             }
             else
             {
@@ -138,8 +144,13 @@ namespace Core
 
         public void CloseEndPartWindow()
         {
+            UIManager.Instance.GetWindow<EndPartWindow>().EndHide.AddListener((Window window) =>
+            {
+                UIManager.Instance.ShowWindow<PartsWindow>();
+                window.EndHide.RemoveAllListeners();
+            });
+
             UIManager.Instance.HideWindow<EndPartWindow>();
-            UIManager.Instance.ShowWindow<PartsWindow>();
         }
 
         public void ClickSettingsButton()

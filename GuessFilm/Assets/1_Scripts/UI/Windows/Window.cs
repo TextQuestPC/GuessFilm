@@ -158,7 +158,6 @@ namespace UI
 
                 if (haveAnimation)
                 {
-                    Debug.Log($"time hide ={timeHide}");
                     StartCoroutine(CoShowAnimation(TypeAnimation.Hide, () => { AfterAnimationHide(); }));
                 }
                 else
