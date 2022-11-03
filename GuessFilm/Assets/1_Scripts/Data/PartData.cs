@@ -22,6 +22,11 @@ namespace Data
             SpritePart = partData.SpritePart;
             PuzzlesData = partData.PuzzlesData;
             GuessPuzzle = new bool[PuzzlesData.Length];
+
+            for (int i = 0; i < GuessPuzzle.Length; i++)
+            {
+                GuessPuzzle[i] = false;
+            }
         }
 
         public PartData(SavePartData saveData, int pricePart, string namePart, Sprite spritePart, PuzzleData[] puzzleData)

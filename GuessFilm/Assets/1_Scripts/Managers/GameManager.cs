@@ -1,9 +1,7 @@
 using Data;
 using SaveSystem;
-using System.Collections;
 using UI;
 using UnityEngine;
-using static UI.Window;
 
 namespace Core
 {
@@ -13,10 +11,9 @@ namespace Core
         private TypeLanguage language;
         private bool isGameNow;
 
-        private PuzzleData[] currentPuzzles;
+        private PartData currentPart;
         private int counterPuzzle = 0;
         private string currentVariant;
-        private int countPoints;
 
         public TypeLanguage Language { get => language; set => language = value; }
         public bool SkipTutorial { get; set; }
@@ -48,7 +45,7 @@ namespace Core
             UIManager.Instance.GetWindow<UI_Window>().SetPoints(SaveLoadManager.Instance.GetPoints());
             UIManager.Instance.HideWindow<PartsWindow>();
 
-            NextPartPuzzles();
+            NextPartData();
             NextVariant();
 
             isGameNow = true;
@@ -58,7 +55,8 @@ namespace Core
         {
             if (variant == currentVariant)
             {
-                BoxManager.GetManager<PointsManager>().AddPoints(countPoints);
+                currentPart.AddGuessPuzzle(counterPuzzle);
+                BoxManager.GetManager<PointsManager>().AddPoints(currentPart.PuzzlesData[counterPuzzle].CountPoints);
             }
 
             UIManager.Instance.GetWindow<VariantsWindow>().ShowWinVariant(currentVariant);
@@ -69,17 +67,17 @@ namespace Core
             AfterSelectVariant();
         }
 
-        private void NextPartPuzzles()
+        private void NextPartData()
         {
-            currentPuzzles = BoxManager.GetManager<StorageManager>().GetCurrentPart.PuzzlesData;
+            currentPart = BoxManager.GetManager<StorageManager>().GetCurrentPart;
+            BoxManager.GetManager<PointsManager>().CurrentPoints = 0;
             counterPuzzle = 0;
         }
 
         private void NextVariant()
         {
-            PuzzleData data = currentPuzzles[counterPuzzle];
+            PuzzleData data = currentPart.PuzzlesData[counterPuzzle];
             string[] texts = new string[4];
-            countPoints = data.CountPoints;
 
             if (language == TypeLanguage.Russian)
             {
@@ -124,7 +122,7 @@ namespace Core
         {
             counterPuzzle++;
 
-            if (counterPuzzle >= currentPuzzles.Length)
+            if (counterPuzzle >= currentPart.PuzzlesData.Length)
             {
                 UIManager.Instance.GetWindow<VariantsWindow>().EndHide.AddListener((Window window) =>
                 {
