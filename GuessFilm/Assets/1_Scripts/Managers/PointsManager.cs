@@ -7,9 +7,11 @@ namespace Core
     [CreateAssetMenu(fileName = "PointsManager", menuName = "Managers/PointsManager")]
     public class PointsManager : BaseManager
     {
-        private int points = 0;
+        private int points = 0, currentPoints;
 
         public int GetPoints { get => points; }
+
+        public int CurrentPoints { get => currentPoints; set => currentPoints = value; }
 
         public override void OnInitialize()
         {
@@ -19,6 +21,7 @@ namespace Core
         public void AddPoints(int value)
         {
             points += value;
+            currentPoints += value;
 
             int countStars = value / 5;
 

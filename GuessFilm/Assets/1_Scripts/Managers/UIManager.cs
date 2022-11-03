@@ -57,7 +57,6 @@ namespace UI
             if(windows.TryGetValue(typeof(T) ,out var window))
             {
                 window.Show();
-                Debug.Log($"SHOW = {window.GetType()}");
 
             }
             else
