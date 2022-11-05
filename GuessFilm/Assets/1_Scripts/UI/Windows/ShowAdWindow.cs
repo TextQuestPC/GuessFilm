@@ -1,18 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
+using Core;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ShowAdWindow : MonoBehaviour
+namespace UI
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ShowAdWindow : Window
     {
-        
-    }
+        [SerializeField] private Button showAdButton, closeButton;
+        [SerializeField] private Text labelUp, labelCenter, countCoinsText;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        protected override void AfterInitialization()
+        {
+            showAdButton.onClick.AddListener(ClickShowAd);
+            closeButton.onClick.AddListener(ClickCloseButton);
+        }
+
+        private void ClickShowAd()
+        {
+            BoxManager.GetManager<AdManager>().ShowRewardAd();
+            Hide();
+        }
+
+        private void ClickCloseButton()
+        {
+            Hide();
+        }
     }
 }
