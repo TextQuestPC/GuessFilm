@@ -12,6 +12,9 @@ namespace Core
 
         private void OnEnable()
         {
+            2 раза вызывается
+            Debug.Log("OnEnable");
+
             YandexGame.CheaterVideoEvent += ErrorShowAd;
             YandexGame.CloseVideoEvent += AddReward;
             YandexGame.CloseFullAdEvent += EndFullScreen;

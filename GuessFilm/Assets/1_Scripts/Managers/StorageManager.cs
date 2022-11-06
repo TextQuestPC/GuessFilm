@@ -134,7 +134,7 @@ namespace Core
 
         private void SaveParts()
         {
-            BoxManager.GetManager<SaveLoadManager>().Save();
+            SaveLoadManager.Instance.Save();
         }
     }
 }

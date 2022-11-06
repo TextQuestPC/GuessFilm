@@ -23,9 +23,9 @@ namespace Core
             points += value;
             currentPoints += value;
 
-            int countStars = value / 5;
+            int countCoins = value / 5;
 
-            UIManager.Instance.GetWindow<UI_Window>().ShowUpPoints(points, countStars);
+            UIManager.Instance.GetWindow<UI_Window>().ShowUpPoints(points, countCoins);
             SaveLoadManager.Instance.Save();
         }
 

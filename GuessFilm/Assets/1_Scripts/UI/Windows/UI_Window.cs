@@ -6,7 +6,7 @@ namespace UI
     public class UI_Window : Window
     {
         [SerializeField] private SettingsButton settingsButton;
-        [SerializeField] private Points points;
+        [SerializeField] private PointsController points;
 
         protected override void AfterInitialization()
         {
@@ -18,9 +18,9 @@ namespace UI
             points.SetPoints(value);
         }
 
-        public void ShowUpPoints(int value, int countStars)
+        public void ShowUpPoints(int value, int countCoins)
         {
-            points.ShowUpPoints(value, countStars);
+            points.ShowUpPoints(value, countCoins);
         }
 
         public void ShowDownPoints(int value)
