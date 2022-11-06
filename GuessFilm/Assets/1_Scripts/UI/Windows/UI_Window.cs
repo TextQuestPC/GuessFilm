@@ -25,7 +25,7 @@ namespace UI
 
         public void ShowDownPoints(int value)
         {
-            points.ShowDownPoints(value);
+            points.ShowChangePoints(value);
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,9 @@ namespace UI
     {
         [SerializeField] private Text textPoints;
         [SerializeField] private GameObject starsParent;
-        [SerializeField] private GameObject[] stars;
+        [SerializeField] private GameObject starPrefab;
+
+        private List<GameObject> stars = new List<GameObject>();
 
         private Animator animator;
 
@@ -39,31 +42,23 @@ namespace UI
             StartCoroutine(CoShowUpPoints(points, countStars));
         }
 
-        public void ShowDownPoints(int points)
+        public void ShowChangePoints(int newValue)
         {
             animator.SetTrigger("UpPoints");
-            textPoints.text = points.ToString();
+            textPoints.text = newValue.ToString();
         }
 
         private IEnumerator CoShowUpPoints(int points, int countStars)
         {
-            foreach (var star in stars)
-            {
-                star.gameObject.SetActive(false);
-            }
-
             for (int i = 0; i < countStars; i++)
             {
-                stars[i].gameObject.SetActive(true);
+                GameObject star = Instantiate(starPrefab, starsParent.transform);
+                stars.Add(star);
             }
 
-            starsParent.gameObject.SetActive(true);
-            animator.SetTrigger("StarFly");
 
             yield return new WaitForSeconds(startAnimTime);
 
-            starsParent.gameObject.SetActive(false);
-            animator.SetTrigger("UpPoints");
             textPoints.text = points.ToString();
         }
     }

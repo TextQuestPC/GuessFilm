@@ -1329,7 +1329,6 @@ GameObject:
   - component: {fileID: 350240742}
   - component: {fileID: 350240744}
   - component: {fileID: 350240741}
-  - component: {fileID: 350240743}
   - component: {fileID: 350240745}
   m_Layer: 0
   m_Name: PointsText
@@ -1401,25 +1400,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350240739}
   m_CullTransparentMesh: 1
---- !u!95 &350240743
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 350240739}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 888b1ed4a5fe8704c8fb7c6da2d99959, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &350240744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1434,10 +1414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPoints: {fileID: 350240741}
   starsParent: {fileID: 938320028}
-  stars:
-  - {fileID: 970426030}
-  - {fileID: 558468516}
-  - {fileID: 1997649897}
+  starPrefab: {fileID: 0}
 --- !u!114 &350240745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5045,8 +5022,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 0
+  m_Color: {r: 0.2, g: 0.2, b: 0.2, a: 0.78431374}
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

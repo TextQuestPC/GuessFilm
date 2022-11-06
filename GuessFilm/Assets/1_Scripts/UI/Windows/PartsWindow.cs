@@ -22,7 +22,7 @@ namespace UI
             ChangeData();
 
             currentButton = partButtons[0];
-            currentButton.SelectButton();
+            SelectPart(currentButton, 0);
         }
 
         public void ChangeData()

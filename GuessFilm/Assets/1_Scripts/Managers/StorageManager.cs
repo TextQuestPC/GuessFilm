@@ -121,6 +121,10 @@ namespace Core
                     SaveParts();
                     UIManager.Instance.GetWindow<PartsWindow>().ChangeData();
                 }
+                else
+                {
+                    UIManager.Instance.ShowWindow<ShowAdWindow>();
+                }
             }
             else
             {
