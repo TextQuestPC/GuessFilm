@@ -14,6 +14,7 @@ namespace Core
         {
             YandexGame.CheaterVideoEvent += ErrorShowAd;
             YandexGame.CloseVideoEvent += AddReward;
+            YandexGame.CloseFullAdEvent += EndFullScreen;
         }
 
         private void OnDisable()
@@ -24,23 +25,38 @@ namespace Core
 
         public void ShowFullScreen()
         {
+#if !UNITY_EDITOR
+            AudioManager.Instance.DisableVolume();
+#endif
             YG._FullscreenShow();
         }
 
         public void ShowRewardAd()
         {
-            
+#if !UNITY_EDITOR
+            AudioManager.Instance.DisableVolume();
+#endif
+
             YG._RewardedShow(100);
         }
 
         private void AddReward(int numberReward)
         {
             BoxManager.GetManager<PointsManager>().AddPoints(100);
+
+            AudioManager.Instance.EnableVolume();
         }
 
         private void ErrorShowAd()
         {
             UIManager.Instance.ShowWindow<ErrorAdWindow>();
+
+            AudioManager.Instance.EnableVolume();
+        }
+
+        private void EndFullScreen()
+        {
+            AudioManager.Instance.EnableVolume();
         }
     }
 }

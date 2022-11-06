@@ -1,19 +1,15 @@
-using Core;
 using SaveSystem;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace UI
 {
     public class UI_Window : Window
     {
-        [SerializeField] private Button settingsButton;
+        [SerializeField] private SettingsButton settingsButton;
         [SerializeField] private Points points;
 
         protected override void AfterInitialization()
         {
-            settingsButton.onClick.AddListener(ClickSettingsButton);
-
             points.SetPoints(SaveLoadManager.Instance.GetPoints());
         }
 
@@ -30,11 +26,6 @@ namespace UI
         public void ShowDownPoints(int value)
         {
             points.ShowDownPoints(value);
-        }
-
-        private void ClickSettingsButton()
-        {
-            BoxManager.GetManager<GameManager>().ClickSettingsButton();
         }
     }
 }

@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: SCENE_MANAGERS
   m_EditorClassIdentifier: 
   managers:
-  - {fileID: 11400000, guid: f5228c3be065a7a409820adf6ab9d986, type: 2}
+  - {fileID: 11400000, guid: d9cd6f2cbbb880f46b081f98a6d4bcb8, type: 2}
   - {fileID: 11400000, guid: 22fc0102179812145ab1c50102aba286, type: 2}
   - {fileID: 11400000, guid: ffe005f8db532ae4a999db6041d13801, type: 2}
   - {fileID: 11400000, guid: 00052c9fc0611174eb76296011602b26, type: 2}
   - {fileID: 11400000, guid: cefd0d54dd4777040b8d4441647686af, type: 2}
-  - {fileID: 11400000, guid: d9cd6f2cbbb880f46b081f98a6d4bcb8, type: 2}

@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -24,7 +25,7 @@ namespace UI
         private Animator animator;
         private bool haveAnimation;
 
-        private CloseButton buttonClose;
+        private CloseButton closeButton;
 
         #region INITIALIZE
 
@@ -46,7 +47,12 @@ namespace UI
 
         public void OnStart()
         {
-            buttonClose = GetComponentInChildren<CloseButton>();
+            closeButton = GetComponentInChildren(typeof(CloseButton), true) as CloseButton;
+
+            if (closeButton != null)
+            {
+                closeButton.GetComponent<Button>().onClick.AddListener(Hide);
+            }
         }
 
         #endregion INITIALIZE

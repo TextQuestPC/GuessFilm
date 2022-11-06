@@ -1,3 +1,4 @@
+using Core;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,11 @@ namespace UI
     {
         private void Awake()
         {
-            GetComponent<Button>().onClick.AddListener(OnClickButton);
+            GetComponent<Button>().onClick.AddListener(()=>
+            {
+                AudioManager.Instance.PlayUISound(TypeUISound.ButtonClick);
+                OnClickButton();
+            });
 
             AfterAwake();
         }

@@ -8,12 +8,6 @@ namespace UI
     public class EndPartWindow : Window
     {
         [SerializeField] private Text winText, labelGuessText, countGuessText, labelCurrentPointsText, currentPointsText;
-        [SerializeField] private Button closeButton;
-
-        protected override void AfterInitialization()
-        {
-            closeButton.onClick.AddListener(ClickCloseButton);
-        }
 
         protected override void BeforeShow()
         {
@@ -32,7 +26,7 @@ namespace UI
             currentPointsText.text = $"{ BoxManager.GetManager<PointsManager>().CurrentPoints}";
         }
 
-        private void ClickCloseButton()
+        protected override void AfterHide()
         {
             BoxManager.GetManager<GameManager>().CloseEndPartWindow();
         }

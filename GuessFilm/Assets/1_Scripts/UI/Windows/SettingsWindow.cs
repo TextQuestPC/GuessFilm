@@ -7,12 +7,14 @@ namespace UI
 {
     public class SettingsWindow : Window
     {
-        [SerializeField] private Button closeButton;
         [SerializeField] private Toggle englishToggle, russianToggle;
+        [SerializeField] private Slider musicSlider;
+
+        private AudioManager audioManager;
 
         protected override void AfterInitialization()
         {
-            closeButton.onClick.AddListener(CloseWindow);
+            audioManager = AudioManager.Instance;
 
             englishToggle.onValueChanged.AddListener(delegate
             {
@@ -22,6 +24,12 @@ namespace UI
             russianToggle.onValueChanged.AddListener(delegate
             {
                 SelectToggle(TypeLanguage.Russian, russianToggle.isOn);
+            });
+
+            musicSlider.onValueChanged.AddListener(delegate
+            {
+                audioManager.ChangeMusicVolume(musicSlider.value);
+                audioManager.ChangeSoundVolume(musicSlider.value);
             });
         }
 
@@ -33,13 +41,14 @@ namespace UI
             englishToggle.isOn = language == TypeLanguage.English;
         }
 
-        private void CloseWindow()
+        protected override void AfterHide()
         {
             BoxManager.GetManager<GameManager>().CloseSettingsWindow();
         }
 
         private void SelectToggle(TypeLanguage language, bool isOn)
         {
+            audioManager.PlayUISound(TypeUISound.ButtonClick);
             TypeLanguage newLanguage = TypeLanguage.Russian;
 
             if (language == TypeLanguage.English)

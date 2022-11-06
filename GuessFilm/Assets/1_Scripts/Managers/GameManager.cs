@@ -38,6 +38,8 @@ namespace Core
                 BoxManager.GetManager<StorageManager>().SelectNewPart(0);
                 ClickPartGame();
             }
+
+            AudioManager.Instance.PlayMusic();
         }
 
         public void ClickPartGame()
@@ -55,8 +57,14 @@ namespace Core
         {
             if (variant == currentVariant)
             {
+                AudioManager.Instance.PlayUISound(TypeUISound.WinSound);
+
                 currentPart.AddGuessPuzzle(counterPuzzle);
                 BoxManager.GetManager<PointsManager>().AddPoints(currentPart.PuzzlesData[counterPuzzle].CountPoints);
+            }
+            else
+            {
+                AudioManager.Instance.PlayUISound(TypeUISound.LoseSound);
             }
 
             UIManager.Instance.GetWindow<VariantsWindow>().ShowWinVariant(currentVariant);
@@ -149,6 +157,7 @@ namespace Core
             });
 
             UIManager.Instance.HideWindow<EndPartWindow>();
+            BoxManager.GetManager<AdManager>().ShowFullScreen();
         }
 
         public void ClickSettingsButton()
