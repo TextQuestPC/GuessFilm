@@ -79,8 +79,6 @@ namespace Core
 
             BoxManager.GetManager<GameManager>().Language = typeLanguage;
 
-            BoxManager.GetManager<AdManager>().ShowFullScreen();
-
             BoxManager.GetManager<GameManager>().SkipTutorial = skipTutorial;
             BoxManager.GetManager<GameManager>().StartGame();
         }

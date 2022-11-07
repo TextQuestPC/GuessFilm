@@ -350,9 +350,11 @@ namespace YG
 
         public void _FullscreenShow()
         {
-            if (timerShowAd >= 31)
-            {
-                timerShowAd = 0;
+            //if (timerShowAd >= 31)
+            //{
+            //    Debug.Log($"timerShowAd = {timerShowAd}");
+
+               //timerShowAd = 0;
 #if !UNITY_EDITOR
                 FullAdShow();
 #else
@@ -360,8 +362,8 @@ namespace YG
                 OpenFullscreen();
                 StartCoroutine(TestCloseFullAd());
 #endif
-            }
-            else Message("(ru) Отображение полноэкранной рекламы заблокировано! Еще рано.  (en) The display of full-screen ads is blocked! It's still early.");
+            //}
+            //else Message("(ru) Отображение полноэкранной рекламы заблокировано! Еще рано.  (en) The display of full-screen ads is blocked! It's still early.");
         }
 
         static Action onFullAdShow;
@@ -880,12 +882,12 @@ namespace YG
 
         #region Update
         int delayFirstCalls;
-        static float timerShowAd;
+       // static float timerShowAd;
 
         private void Update()
         {
             // Таймер для обработки показа Fillscreen рекламы
-            timerShowAd += Time.unscaledDeltaTime;
+            //timerShowAd += Time.unscaledDeltaTime;
 
             // Задержка вызова метода FirstСalls
             if (delayFirstCalls < 20)
