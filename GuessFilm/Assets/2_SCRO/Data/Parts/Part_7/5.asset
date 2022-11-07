@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b9af36af1570147a52e8fb68877bf6, type: 3}
+  m_Name: 5
+  m_EditorClassIdentifier: 
+  RussianVariants:
+  - "\u0411\u0435\u0437\u0443\u043C\u043D\u044B\u0439 \u041C\u0430\u043A\u0441: \u0414\u043E\u0440\u043E\u0433\u0430
+    \u044F\u0440\u043E\u0441\u0442\u0438"
+  - "\u0427\u0435\u043B\u043E\u0432\u0435\u043A-\u041F\u0430\u0443\u043A: \u0427\u0435\u0440\u0435\u0437
+    \u0432\u0441\u0435\u043B\u0435\u043D\u043D\u044B\u0435"
+  - "\u041B\u043E\u0433\u0430\u043D"
+  - "\u0421\u0442\u0430\u0440\u0442\u0440\u0435\u043A: \u0411\u0435\u0441\u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u044C"
+  EnglishVariants:
+  - 'Mad Max: Fury Road  '
+  - 'Spider-Man: Into the Spider-Verse  '
+  - Logan
+  - 'Star Trek Beyond  '
+  Sprite: {fileID: 21300000, guid: 86b5485a90930a34bb862742d36081df, type: 3}
+  CountPoints: 5

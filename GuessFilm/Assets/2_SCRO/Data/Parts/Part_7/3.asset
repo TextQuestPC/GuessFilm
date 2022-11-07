@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b9af36af1570147a52e8fb68877bf6, type: 3}
+  m_Name: 3
+  m_EditorClassIdentifier: 
+  RussianVariants:
+  - "\u0413\u0440\u0430\u0432\u0438\u0442\u0430\u0446\u0438\u044F"
+  - "\u0418\u043D\u0442\u0435\u0440\u0441\u0442\u0435\u043B\u043B\u0430\u0440"
+  - "\u0414\u0436\u043E\u043A\u0435\u0440"
+  - "\u041F\u0435\u0440\u0432\u044B\u0439 \u043C\u0441\u0442\u0438\u0442\u0435\u043B\u044C:
+    \u041F\u0440\u043E\u0442\u0438\u0432\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435"
+  EnglishVariants:
+  - Gravity
+  - Interstellar
+  - Joker
+  - 'Captain America: Civil War  '
+  Sprite: {fileID: 21300000, guid: 6a03b82f55b022842a22ff20a18fbf68, type: 3}
+  CountPoints: 10
