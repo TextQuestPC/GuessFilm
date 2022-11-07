@@ -18,13 +18,6 @@ namespace Core
         public TypeLanguage Language { get => language; set => language = value; }
         public bool SkipTutorial { get; set; }
 
-        public override void OnInitialize()
-        {
-            // TODO: check language on device
-
-            language = TypeLanguage.Russian;
-        }
-
         #region GAMEPLAY
 
         public void StartGame()

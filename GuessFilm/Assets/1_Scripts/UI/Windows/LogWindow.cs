@@ -1,3 +1,4 @@
+using Data;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,10 @@ namespace UI
         public void LogError(string text)
         {
             logErrorText.text = text;
+        }
+
+        public override void ChangeLanguage(TypeLanguage language)
+        {
         }
     }
 }

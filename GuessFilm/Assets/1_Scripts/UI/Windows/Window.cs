@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
 using UnityEngine.UI;
+using Data;
 
 namespace UI
 {
@@ -195,5 +196,7 @@ namespace UI
         protected virtual void AfterHide() { }
 
         #endregion
+
+        public abstract void ChangeLanguage(TypeLanguage language);
     }
 }

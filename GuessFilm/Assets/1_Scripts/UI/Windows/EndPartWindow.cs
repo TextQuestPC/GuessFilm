@@ -9,6 +9,10 @@ namespace UI
     {
         [SerializeField] private Text winText, labelGuessText, countGuessText, labelCurrentPointsText, currentPointsText;
 
+        public override void ChangeLanguage(TypeLanguage language)
+        {
+        }
+
         protected override void BeforeShow()
         {
             PartData partData = BoxManager.GetManager<StorageManager>().GetCurrentPart;

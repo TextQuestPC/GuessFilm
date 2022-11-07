@@ -80,5 +80,9 @@ namespace UI
 
             BoxManager.GetManager<GameManager>().Language = newLanguage;
         }
+
+        public override void ChangeLanguage(TypeLanguage language)
+        {
+        }
     }
 }

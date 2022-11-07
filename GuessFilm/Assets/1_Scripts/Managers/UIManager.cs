@@ -1,3 +1,4 @@
+using Data;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -74,6 +75,14 @@ namespace UI
             else
             {
                 Debug.Log($"<color=red>Нет окна {typeof(T)}, для закрытия!");
+            }
+        }
+
+        public void ChangeLanguage(TypeLanguage language)
+        {
+            foreach (var window in windows)
+            {
+                window.Value.ChangeLanguage(language);
             }
         }
 

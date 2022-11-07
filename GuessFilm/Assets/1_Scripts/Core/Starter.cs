@@ -74,6 +74,10 @@ namespace Core
             {
                 typeLanguage = TypeLanguage.Russian;
             }
+            else
+            {
+                typeLanguage = TypeLanguage.English;
+            }
 
             // TODO: change language in UI
 

@@ -1,0 +1,6 @@
+Open;Открыть;Open
+Start;Начать;Старт
+ErrorAdText;Проблема при загрузки рекламы! Возможно у вас включен блокировщик рекламы.;Problem loading ads! You may have an ad blocker enabled.
+Watch;Смотреть;Watch
+NotEnoughCoins;Не хватает монет?!;Not enough coins?!
+ViewAdsFor;Посмотреть рекламу за;View ads for
