@@ -14,3 +14,4 @@ End;закончена;end
 Guessed;Угадано;Guessed
 Received;Получено;Received
 Next;Далее;Next
+TimeBeforeAd;Время до рекламы: ;Time before advertising: 

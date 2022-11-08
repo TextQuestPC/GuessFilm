@@ -8,12 +8,16 @@ namespace Core
     [CreateAssetMenu(fileName = "AdManager", menuName = "Managers/AdManager")]
     public class AdManager : BaseManager
     {
-        private const float TIME_WAIT_AD = 50f;
+        private const int TIME_WAIT_AD = 50;
 
         private YandexGame YG;
         public YandexGame SetYandexGame { set => YG = value; }
 
+        private int timeBeforeAd;
         private bool isCanShowAd = true;
+
+        public int GetTimeBeforeAd { get => timeBeforeAd; }
+        public bool GetIsCanShowAd { get => isCanShowAd; }
 
         public override void OnInitialize()
         {
@@ -26,7 +30,7 @@ namespace Core
         {
             if (isCanShowAd)
             {
-                isCanShowAd = false;
+                StartTimeBeforeAd();
 
 #if UNITY_EDITOR
                 AudioManager.Instance.DisableVolume();
@@ -40,11 +44,17 @@ namespace Core
         {
             if (isCanShowAd)
             {
-                isCanShowAd = false;
+                StartTimeBeforeAd();
                 AudioManager.Instance.DisableVolume();
 
                 YG._RewardedShow(100);
             }
+        }
+
+        private void StartTimeBeforeAd()
+        {
+            isCanShowAd = false;
+            timeBeforeAd = TIME_WAIT_AD;
         }
 
         private void EndShowRewardAd(int numberReward)
@@ -73,7 +83,12 @@ namespace Core
 
         private IEnumerator CoTime()
         {
-            yield return new WaitForSeconds(TIME_WAIT_AD);
+            while (timeBeforeAd > 0)
+            {
+                timeBeforeAd--;
+                yield return new WaitForSeconds(1);
+            }
+
             isCanShowAd = true;
         }
     }

@@ -11,7 +11,7 @@ namespace UI
 
         public override void ChangeLanguage()
         {
-            endPartText.text = Localizator.Instance.GetTextUI("Part") + BoxManager.GetManager<StorageManager>().GetCurrentPart.NameUi + Localizator.Instance.GetTextUI("End");
+            endPartText.text = Localizator.Instance.GetTextUI("Part") + " " + BoxManager.GetManager<StorageManager>().GetCurrentPart.NameUi + " " + Localizator.Instance.GetTextUI("End");
             labelGuessText.text = Localizator.Instance.GetTextUI("Guessed");
             labelCurrentPointsText.text = Localizator.Instance.GetTextUI("Received");
             buttonNextText.text = Localizator.Instance.GetTextUI("Next");

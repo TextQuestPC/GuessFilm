@@ -22,8 +22,6 @@ namespace Core
         {
             this.language = language;
 
-            Debug.Log($"Change language on {language}");
-
             Localizator.Instance.SetLanguage = language;
             BoxManager.GetManager<StorageManager>().ChangeLanguageParts();
             UIManager.Instance.ChangeLanguage();

@@ -32,8 +32,6 @@ namespace UI
             sliderGuess.value = data.GuessPuzzle.Length;
             isOpen = data.IsOpen;
 
-            Debug.Log("change lang");
-
             openText.text = Localizator.Instance.GetTextUI("Open");
 
             closeImage.gameObject.SetActive(!isOpen);

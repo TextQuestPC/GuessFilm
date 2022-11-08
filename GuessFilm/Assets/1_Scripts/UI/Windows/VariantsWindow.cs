@@ -1,5 +1,4 @@
 using Core;
-using Data;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,6 +8,7 @@ namespace UI
 {
     public class VariantsWindow : Window
     {
+        [HideInInspector]
         public UnityEvent OnSelectVariant;
 
         [SerializeField] private VariantButton[] buttons;
@@ -54,11 +54,14 @@ namespace UI
 
         public void SelectVariant(string text)
         {
-            canClick = false;
+            if (canClick)
+            {
+                canClick = false;
 
-            BoxManager.GetManager<GameManager>().SelectVariantPart(text);
+                BoxManager.GetManager<GameManager>().SelectVariantPart(text);
 
-            OnSelectVariant?.Invoke();
+                OnSelectVariant?.Invoke();
+            }
         }
 
         public void ShowWinVariant(string winVariant)

@@ -19,7 +19,7 @@ namespace Data
             Id = partData.ID;
             IsOpen = partData.IsOpen;
             PricePart = partData.PricePart;
-            NamePart = partData.name;
+            NamePart = partData.NamePart;
             NameUi = Localizator.Instance.GetTextUI(NamePart);
             SpritePart = partData.SpritePart;
             PuzzlesData = partData.PuzzlesData;

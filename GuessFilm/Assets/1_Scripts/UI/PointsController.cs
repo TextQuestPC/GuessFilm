@@ -13,7 +13,7 @@ namespace UI
         private float timeCoinAnimation;
 
         private Animator textAnimator;
-        не правильно показывается анимация прибавления очков
+
         private void Awake()
         {
             textAnimator = textPoints.GetComponent<Animator>();
@@ -52,19 +52,9 @@ namespace UI
 
         private IEnumerator CoShowUpPoints(int points, int countCoins)
         {
-            for (int i = 0; i < countCoins && i < coins.Length; i++)
-            {
-                coins[i].SetActive(true);
-            }
-
             coinsParent.SetActive(true);
             yield return new WaitForSeconds(timeCoinAnimation);
             coinsParent.SetActive(false);
-
-            foreach (var coin in coins)
-            {
-                coin.SetActive(false);
-            }
 
             ShowChangePoints(points);
         }
