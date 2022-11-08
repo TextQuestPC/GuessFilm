@@ -197,6 +197,6 @@ namespace UI
 
         #endregion
 
-        public abstract void ChangeLanguage(TypeLanguage language);
+        public abstract void ChangeLanguage();
     }
 }

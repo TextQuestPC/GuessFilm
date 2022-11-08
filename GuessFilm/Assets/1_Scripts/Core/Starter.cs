@@ -51,8 +51,6 @@ namespace Core
         {
             SaveLoadManager.Instance.OnLoad.RemoveListener(InitControllers);
 
-            YandexGame.SwitchLangEvent += SwitchLanguage;
-
             UIManager.Instance.OnInitialize();
             UIManager.Instance.OnStart();
 
@@ -85,18 +83,6 @@ namespace Core
 
             BoxManager.GetManager<GameManager>().SkipTutorial = skipTutorial;
             BoxManager.GetManager<GameManager>().StartGame();
-        }
-
-        private void SwitchLanguage(string lang)
-        {
-            TypeLanguage typeLanguage = TypeLanguage.English;
-
-            if (lang == "ru")
-            {
-                typeLanguage = TypeLanguage.Russian;
-            }
-
-            BoxManager.GetManager<GameManager>().Language = typeLanguage;
         }
     }
 }

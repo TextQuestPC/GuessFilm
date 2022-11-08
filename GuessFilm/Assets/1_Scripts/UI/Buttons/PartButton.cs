@@ -8,7 +8,7 @@ namespace UI
     public class PartButton : MyButton
     {
         [SerializeField] private Image imagePart, substrateImage, closeImage;
-        [SerializeField] private Text namePartText, priceText, countGuess, labelBuyText;
+        [SerializeField] private Text namePartText, priceText, countGuess, openText;
         [SerializeField] private Slider sliderGuess;
         [SerializeField] private Color defaultColor, selectedColor;
 
@@ -23,7 +23,7 @@ namespace UI
 
         public void SetData(PartData data)
         {
-            namePartText.text = data.NamePart;
+            namePartText.text = data.NameUi;
             imagePart.sprite = data.SpritePart;
             numberPart = data.Id;
             priceText.text = data.PricePart.ToString();
@@ -31,6 +31,10 @@ namespace UI
             sliderGuess.maxValue = data.PuzzlesData.Length;
             sliderGuess.value = data.GuessPuzzle.Length;
             isOpen = data.IsOpen;
+
+            Debug.Log("change lang");
+
+            openText.text = Localizator.Instance.GetTextUI("Open");
 
             closeImage.gameObject.SetActive(!isOpen);
             sliderGuess.gameObject.SetActive(isOpen);

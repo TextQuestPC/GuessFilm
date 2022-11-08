@@ -4,3 +4,13 @@ ErrorAdText;Проблема при загрузки рекламы! Возмо�
 Watch;Смотреть;Watch
 NotEnoughCoins;Не хватает монет?!;Not enough coins?!
 ViewAdsFor;Посмотреть рекламу за;View ads for
+Cartoons;Мультфильмы;Cartoons
+Movies;Фильмы;Movies
+Series;Сериалы;Series
+Action;Боевики;Action
+Comedy;Комедии;Comedy
+Part;Часть;Part
+End;закончена;end
+Guessed;Угадано;Guessed
+Received;Получено;Received
+Next;Далее;Next

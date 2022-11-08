@@ -1,3 +1,4 @@
+using Data;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,5 +19,8 @@ namespace UI
             selectVariantObject.gameObject.SetActive(false);
         }
 
+        public override void ChangeLanguage()
+        {
+        }
     }
 }

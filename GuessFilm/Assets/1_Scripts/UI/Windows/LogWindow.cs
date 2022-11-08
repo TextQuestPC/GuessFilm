@@ -19,7 +19,7 @@ namespace UI
             logErrorText.text = text;
         }
 
-        public override void ChangeLanguage(TypeLanguage language)
+        public override void ChangeLanguage()
         {
         }
     }

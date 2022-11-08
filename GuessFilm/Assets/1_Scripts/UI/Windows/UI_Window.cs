@@ -1,3 +1,4 @@
+using Data;
 using SaveSystem;
 using UnityEngine;
 
@@ -26,6 +27,10 @@ namespace UI
         public void ShowDownPoints(int value)
         {
             points.ShowChangePoints(value);
+        }
+
+        public override void ChangeLanguage()
+        {
         }
     }
 }

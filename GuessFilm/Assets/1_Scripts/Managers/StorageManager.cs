@@ -77,6 +77,17 @@ namespace Core
             }
         }
 
+        public void ChangeLanguageParts()
+        {
+            if (parts != null)
+            {
+                foreach (var part in parts)
+                {
+                    part.ChangeLanguage();
+                }
+            }
+        }
+
         public void SelectNewPart(int numberPart)
         {
             foreach (var part in parts)

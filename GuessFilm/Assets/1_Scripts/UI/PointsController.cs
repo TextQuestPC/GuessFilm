@@ -13,7 +13,7 @@ namespace UI
         private float timeCoinAnimation;
 
         private Animator textAnimator;
-
+        не правильно показывается анимация прибавления очков
         private void Awake()
         {
             textAnimator = textPoints.GetComponent<Animator>();

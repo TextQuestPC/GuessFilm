@@ -7,10 +7,14 @@ namespace UI
 {
     public class EndPartWindow : Window
     {
-        [SerializeField] private Text winText, labelGuessText, countGuessText, labelCurrentPointsText, currentPointsText;
+        [SerializeField] private Text endPartText, labelGuessText, countGuessText, labelCurrentPointsText, currentPointsText, buttonNextText;
 
-        public override void ChangeLanguage(TypeLanguage language)
+        public override void ChangeLanguage()
         {
+            endPartText.text = Localizator.Instance.GetTextUI("Part") + BoxManager.GetManager<StorageManager>().GetCurrentPart.NameUi + Localizator.Instance.GetTextUI("End");
+            labelGuessText.text = Localizator.Instance.GetTextUI("Guessed");
+            labelCurrentPointsText.text = Localizator.Instance.GetTextUI("Received");
+            buttonNextText.text = Localizator.Instance.GetTextUI("Next");
         }
 
         protected override void BeforeShow()
@@ -28,6 +32,8 @@ namespace UI
 
             countGuessText.text = $"{countGuess}/{partData.GuessPuzzle.Length}";
             currentPointsText.text = $"{ BoxManager.GetManager<PointsManager>().CurrentPoints}";
+
+            ChangeLanguage();
         }
 
         protected override void AfterHide()

@@ -9,12 +9,15 @@ namespace UI
     {
         [SerializeField] private PartButton[] partButtons;
         [SerializeField] private Button startGameButton;
+        [SerializeField] private Text startText;
 
         private PartButton currentButton;
 
         protected override void AfterInitialization()
         {
             startGameButton.onClick.AddListener(ClickStartGame);
+
+            startText.text = Localizator.Instance.GetTextUI("Start");
         }
 
         protected override void BeforeShow()
@@ -55,6 +58,13 @@ namespace UI
         private void ClickStartGame()
         {
             BoxManager.GetManager<GameManager>().ClickPartGame();
+        }
+
+        public override void ChangeLanguage()
+        {
+            ChangeData();
+
+            startText.text = Localizator.Instance.GetTextUI("Start");
         }
     }
 }

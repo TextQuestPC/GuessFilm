@@ -18,6 +18,17 @@ namespace Core
         public TypeLanguage Language { get => language; set => language = value; }
         public bool SkipTutorial { get; set; }
 
+        public void ChangeLanguage(TypeLanguage language)
+        {
+            this.language = language;
+
+            Debug.Log($"Change language on {language}");
+
+            Localizator.Instance.SetLanguage = language;
+            BoxManager.GetManager<StorageManager>().ChangeLanguageParts();
+            UIManager.Instance.ChangeLanguage();
+        }
+
         #region GAMEPLAY
 
         public void StartGame()

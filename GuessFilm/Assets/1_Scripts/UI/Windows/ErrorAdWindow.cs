@@ -8,7 +8,12 @@ namespace UI
     {
         [SerializeField] private Text errorText;
 
-        public override void ChangeLanguage(TypeLanguage language)
+        protected override void AfterInitialization()
+        {
+            ChangeLanguage();
+        }
+
+        public override void ChangeLanguage()
         {
             errorText.text = Localizator.Instance.GetTextUI("ErrorAdText");
         }

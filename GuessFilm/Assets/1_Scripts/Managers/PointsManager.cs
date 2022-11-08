@@ -36,12 +36,5 @@ namespace Core
             UIManager.Instance.GetWindow<UI_Window>().ShowDownPoints(points);
             SaveLoadManager.Instance.Save();
         }
-
-        public bool CanOpenPart(int numberPart)
-        {
-            // int pricePart
-
-            return true;
-        }
     }
 }

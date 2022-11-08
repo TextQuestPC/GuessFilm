@@ -10,7 +10,7 @@ namespace UI
         [SerializeField] private Button showAdButton;
         [SerializeField] private Text labelUp, labelCenter, countCoinsText;
 
-        public override void ChangeLanguage(TypeLanguage language)
+        public override void ChangeLanguage()
         {
             showAdButton.GetComponentInChildren<Text>().text = Localizator.Instance.GetTextUI("Watch");
             labelUp.text = Localizator.Instance.GetTextUI("Watch");
@@ -20,6 +20,7 @@ namespace UI
         protected override void AfterInitialization()
         {
             showAdButton.onClick.AddListener(ClickShowAd);
+            ChangeLanguage();
         }
 
         private void ClickShowAd()

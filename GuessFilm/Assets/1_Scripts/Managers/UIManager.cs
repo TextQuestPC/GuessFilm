@@ -78,11 +78,11 @@ namespace UI
             }
         }
 
-        public void ChangeLanguage(TypeLanguage language)
+        public void ChangeLanguage()
         {
             foreach (var window in windows)
             {
-                window.Value.ChangeLanguage(language);
+                window.Value.ChangeLanguage();
             }
         }
 

@@ -9,8 +9,9 @@ public class Localizator : Singleton<Localizator>
     private bool isLoad;
 
     private Dictionary<string, string[]> dataUI = new Dictionary<string, string[]>();
-
     private const string FILE_NAME_UI = "UI";
+
+    public TypeLanguage SetLanguage { set => language = value; }
 
     protected override void AfterAwaik()
     {

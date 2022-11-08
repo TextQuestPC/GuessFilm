@@ -49,19 +49,18 @@ namespace UI
         private void SelectToggle(TypeLanguage language, bool isOn)
         {
             audioManager.PlayUISound(TypeUISound.ButtonClick);
-            TypeLanguage newLanguage = TypeLanguage.Russian;
 
             if (language == TypeLanguage.English)
             {
                 if (isOn)
                 {
                     russianToggle.isOn = false;
-                    newLanguage = TypeLanguage.English;
+
+                    BoxManager.GetManager<GameManager>().ChangeLanguage(TypeLanguage.English);
                 }
                 else
                 {
                     russianToggle.isOn = true;
-                    newLanguage = TypeLanguage.Russian;
                 }
             }
             else if (language == TypeLanguage.Russian)
@@ -69,19 +68,17 @@ namespace UI
                 if (isOn)
                 {
                     englishToggle.isOn = false;
-                    newLanguage = TypeLanguage.Russian;
+
+                    BoxManager.GetManager<GameManager>().ChangeLanguage(TypeLanguage.Russian);
                 }
                 else
                 {
                     englishToggle.isOn = true;
-                    newLanguage = TypeLanguage.English;
                 }
             }
-
-            BoxManager.GetManager<GameManager>().Language = newLanguage;
         }
 
-        public override void ChangeLanguage(TypeLanguage language)
+        public override void ChangeLanguage()
         {
         }
     }

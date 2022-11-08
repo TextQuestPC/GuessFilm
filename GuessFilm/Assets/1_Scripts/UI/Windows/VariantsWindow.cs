@@ -1,4 +1,5 @@
 using Core;
+using Data;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -85,6 +86,10 @@ namespace UI
             yield return new WaitForSeconds(1f);
 
             BoxManager.GetManager<GameManager>().AfterShowWinVariant();
+        }
+
+        public override void ChangeLanguage()
+        {
         }
     }
 }

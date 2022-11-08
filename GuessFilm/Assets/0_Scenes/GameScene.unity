@@ -530,11 +530,12 @@ MonoBehaviour:
   EndHide:
     m_PersistentCalls:
       m_Calls: []
-  winText: {fileID: 1125314306}
+  endPartText: {fileID: 1125314306}
   labelGuessText: {fileID: 1728825380}
   countGuessText: {fileID: 1210587297}
   labelCurrentPointsText: {fileID: 2032062764}
   currentPointsText: {fileID: 1320618301}
+  buttonNextText: {fileID: 481496699}
 --- !u!1 &115974875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2855,7 +2856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &592366648
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3256,6 +3257,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683047368}
   m_CullTransparentMesh: 1
+--- !u!1 &726767030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 726767032}
+  - component: {fileID: 726767031}
+  m_Layer: 0
+  m_Name: Localizator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &726767031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726767030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d143d1ccb54ad594fb5ea6597e4dc25a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 0
+--- !u!4 &726767032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726767030}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &727695368
 GameObject:
   m_ObjectHideFlags: 0
@@ -6213,14 +6258,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.25474095, g: 0.8490566, b: 0.19624422, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 675c35953fb7d41c89144b9219f6ac1b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2550c34bcb002466682343c8e43106c7, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6229,7 +6274,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 1.49
 --- !u!222 &1424912634
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8247,6 +8292,7 @@ MonoBehaviour:
   - {fileID: 1027985371}
   - {fileID: 1520010351}
   startGameButton: {fileID: 1424912632}
+  startText: {fileID: 730163917}
 --- !u!1 &1836890302
 GameObject:
   m_ObjectHideFlags: 0

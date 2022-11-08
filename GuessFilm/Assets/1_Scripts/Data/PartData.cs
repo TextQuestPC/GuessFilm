@@ -8,7 +8,8 @@ namespace Data
         public int Id { get; private set; }
         public bool IsOpen { get; private set; }
         public int PricePart { get; private set; }
-        public string NamePart { get; private set; }
+        private string NamePart;
+        public string NameUi { get; private set; }
         public Sprite SpritePart { get; private set; }
         public PuzzleData[] PuzzlesData { get; private set; }
         public bool[] GuessPuzzle { get; private set; }
@@ -19,6 +20,7 @@ namespace Data
             IsOpen = partData.IsOpen;
             PricePart = partData.PricePart;
             NamePart = partData.name;
+            NameUi = Localizator.Instance.GetTextUI(NamePart);
             SpritePart = partData.SpritePart;
             PuzzlesData = partData.PuzzlesData;
             GuessPuzzle = new bool[PuzzlesData.Length];
@@ -36,6 +38,7 @@ namespace Data
             GuessPuzzle = saveData.GuessPuzzle;
             PricePart = pricePart;
             NamePart = namePart;
+            NameUi = Localizator.Instance.GetTextUI(NamePart);
             SpritePart = spritePart;
             PuzzlesData = puzzleData;
         }
@@ -48,6 +51,11 @@ namespace Data
         public void SetIsOpen(bool value)
         {
             IsOpen = value;
+        }
+
+        public void ChangeLanguage()
+        {
+            NameUi = Localizator.Instance.GetTextUI(NamePart); 
         }
     }
 }
