@@ -39,7 +39,7 @@ namespace UI
             }
             else
             {
-                image2.sprite = sprite;
+                image.sprite = sprite;
             }
 
             canClick = true;
