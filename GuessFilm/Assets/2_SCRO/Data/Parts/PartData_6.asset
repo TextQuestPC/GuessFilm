@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 5
   IsOpen: 0
   PricePart: 205
-  NamePart: "\u0423\u0436\u0430\u0441\u044B"
+  NamePart: Horror
   SpritePart: {fileID: 21300000, guid: 2d62b42496650734891fab5cc8a35742, type: 3}
   PuzzlesData:
   - {fileID: 11400000, guid: 16dda71e61b9bd5438545a51a41b4157, type: 2}

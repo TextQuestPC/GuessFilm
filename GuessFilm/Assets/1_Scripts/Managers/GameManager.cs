@@ -46,7 +46,7 @@ namespace Core
 
         public void ClickPartGame()
         {
-            UIManager.Instance.GetWindow<UI_Window>().SetPoints(SaveLoadManager.Instance.GetPoints());
+            BoxManager.GetManager<PointsManager>().AddPoints(SaveLoadManager.Instance.GetPoints());
             UIManager.Instance.HideWindow<PartsWindow>();
 
             NextPartData();

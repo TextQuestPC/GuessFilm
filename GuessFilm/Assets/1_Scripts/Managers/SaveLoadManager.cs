@@ -17,13 +17,14 @@ namespace SaveSystem
         public UnityEvent OnLoad;
 
         private bool saveInYandex;
+
         private SaveData saveData;
 
         public int GetPoints()
         {
-            if(saveData == null)
+            if (saveInYandex)
             {
-                return 0;
+                return YandexGame.savesData.SaveData.Points;
             }
             else
             {
@@ -33,9 +34,9 @@ namespace SaveSystem
 
         public bool GetFirstStart()
         {
-            if (saveData == null)
+            if (saveInYandex)
             {
-                return false;
+                return YandexGame.savesData.SaveData.FirstStart;
             }
             else
             {
@@ -45,9 +46,9 @@ namespace SaveSystem
 
         public SavePartData[] GetPartsData()
         {
-            if (saveData == null)
+            if (saveInYandex)
             {
-                return null;
+                return YandexGame.savesData.SaveData.PartsData;
             }
             else
             {
@@ -63,7 +64,7 @@ namespace SaveSystem
             {
                 if (YandexGame.savesData.SaveData != null)
                 {
-                    saveData = YandexGame.savesData.SaveData;
+                    SaveData saveData = YandexGame.savesData.SaveData;
 
                     Debug.Log("ПРоверяем какая дата пришла из сохранения");
                     Debug.Log($"points = {saveData.Points}");
