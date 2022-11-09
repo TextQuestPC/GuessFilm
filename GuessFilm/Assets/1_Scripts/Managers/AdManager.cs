@@ -32,9 +32,7 @@ namespace Core
             {
                 StartTimeBeforeAd();
 
-#if UNITY_EDITOR
                 AudioManager.Instance.DisableVolume();
-#endif
 
                 YG._FullscreenShow();
             }

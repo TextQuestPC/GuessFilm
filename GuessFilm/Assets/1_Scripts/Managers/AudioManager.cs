@@ -68,8 +68,8 @@ namespace Core
 
         public void EnableVolume()
         {
-            ChangeMusicVolume(volumeMusic);
-            ChangeSoundVolume(volumeSound);
+            ChangeMusicVolume(1);
+            ChangeSoundVolume(1);
         }
 
         public void PlayMusic()
