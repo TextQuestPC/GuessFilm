@@ -31,6 +31,8 @@ namespace Core
 
         public void StartGame()
         {
+            BoxManager.GetManager<PointsManager>().CurrentPoints = SaveLoadManager.Instance.GetPoints();
+
             if (SaveLoadManager.Instance.GetFirstStart())
             {
                 UIManager.Instance.ShowWindow<PartsWindow>();
@@ -46,7 +48,6 @@ namespace Core
 
         public void ClickPartGame()
         {
-            BoxManager.GetManager<PointsManager>().AddPoints(SaveLoadManager.Instance.GetPoints());
             UIManager.Instance.HideWindow<PartsWindow>();
 
             NextPartData();
