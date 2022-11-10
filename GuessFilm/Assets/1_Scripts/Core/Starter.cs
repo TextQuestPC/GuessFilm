@@ -13,6 +13,8 @@ namespace Core
         [SerializeField] private SCRO_SceneManagers sceneManagers;
         [SerializeField] private bool isLogging, skipTutorial, saveInYandex;
 
+        private bool isLoad;
+
         private void Start()
         {
             AuthorizationPlayer();
@@ -42,9 +44,15 @@ namespace Core
 
         private void LoadData()
         {
-            SaveLoadManager.Instance.OnLoad.AddListener(InitControllers);
-            SaveLoadManager.Instance.SetSaveInYandex = saveInYandex;
-            SaveLoadManager.Instance.LoadData();
+            if (!isLoad)
+            {
+                isLoad = true;
+                Debug.Log($"LOAD DATA");
+
+                SaveLoadManager.Instance.OnLoad.AddListener(InitControllers);
+                SaveLoadManager.Instance.SetSaveInYandex = saveInYandex;
+                SaveLoadManager.Instance.LoadData();
+            }
         }
 
         private void InitControllers()

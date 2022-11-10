@@ -31,7 +31,7 @@ namespace Core
 
         public void StartGame()
         {
-            BoxManager.GetManager<PointsManager>().CurrentPoints = SaveLoadManager.Instance.GetPoints();
+            BoxManager.GetManager<PointsManager>().Points = SaveLoadManager.Instance.GetPoints();
 
             if (SaveLoadManager.Instance.GetFirstStart())
             {

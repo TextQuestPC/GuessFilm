@@ -1,5 +1,3 @@
-using Data;
-using SaveSystem;
 using UnityEngine;
 
 namespace UI
@@ -8,11 +6,6 @@ namespace UI
     {
         [SerializeField] private SettingsButton settingsButton;
         [SerializeField] private PointsController points;
-
-        protected override void AfterInitialization()
-        {
-            points.SetPoints(SaveLoadManager.Instance.GetPoints());
-        }
 
         public void SetPoints(int value)
         {

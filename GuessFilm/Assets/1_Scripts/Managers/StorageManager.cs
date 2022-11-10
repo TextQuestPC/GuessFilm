@@ -105,7 +105,7 @@ namespace Core
         public void TryOpenPart(int numberPart)
         {
             PartData part = null;
-            int points = BoxManager.GetManager<PointsManager>().GetPoints;
+            int points = BoxManager.GetManager<PointsManager>().Points;
 
             for (int i = 0; i < parts.Length; i++)
             {

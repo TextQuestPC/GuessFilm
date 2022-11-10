@@ -1498,10 +1498,6 @@ MonoBehaviour:
   - {fileID: 8020730033742201641}
   - {fileID: 1544262878}
   - {fileID: 316214496}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1001 &377104387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2780,7 +2776,7 @@ MonoBehaviour:
   sceneManagers: {fileID: 11400000, guid: 5bea4a854fb58ed43b0e7ee78aa1a7bc, type: 2}
   isLogging: 1
   skipTutorial: 1
-  saveInYandex: 1
+  saveInYandex: 0
 --- !u!4 &578114763
 Transform:
   m_ObjectHideFlags: 0
@@ -5733,7 +5729,7 @@ MonoBehaviour:
   soundAudio2: {fileID: 150440374}
   soundAudio3: {fileID: 63677221}
   musics:
-  - {fileID: 8300000, guid: 4d6fe353fcb6e40229313a686525e18c, type: 3}
+  - {fileID: 8300000, guid: 9b35544e60bac4dd99d05431ee8a4378, type: 3}
   - {fileID: 8300000, guid: 836b549cf0b6cd241b8156d714b4e607, type: 3}
   - {fileID: 8300000, guid: e2159c2d7c9e381489e830a533a8c37c, type: 3}
   - {fileID: 8300000, guid: 9b35544e60bac4dd99d05431ee8a4378, type: 3}

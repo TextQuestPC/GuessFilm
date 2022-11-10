@@ -28,7 +28,14 @@ namespace SaveSystem
             }
             else
             {
-                return saveData.Points;
+                if (saveData == null)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return saveData.Points;
+                }
             }
         }
 
@@ -40,7 +47,14 @@ namespace SaveSystem
             }
             else
             {
-                return saveData.FirstStart;
+                if (saveData == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return saveData.FirstStart;
+                }
             }
         }
 
@@ -52,7 +66,14 @@ namespace SaveSystem
             }
             else
             {
-                return saveData.PartsData;
+                if (saveData == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return saveData.PartsData;
+                }
             }
         }
 
@@ -88,7 +109,7 @@ namespace SaveSystem
 
         public void Save()
         {
-            int points = BoxManager.GetManager<PointsManager>().GetPoints;
+            int points = BoxManager.GetManager<PointsManager>().Points;
             bool firstStart = true;
 
             if (saveInYandex)

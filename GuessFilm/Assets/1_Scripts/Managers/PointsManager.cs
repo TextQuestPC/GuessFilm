@@ -9,7 +9,15 @@ namespace Core
     {
         private int points = 0, currentPoints;
 
-        public int GetPoints { get => points; }
+        public int Points 
+        { 
+            get => points; 
+            set 
+            {
+                points = value;
+                UIManager.Instance.GetWindow<UI_Window>().SetPoints(points);
+            }
+        }
 
         public int CurrentPoints { get => currentPoints; set => currentPoints = value; }
 
