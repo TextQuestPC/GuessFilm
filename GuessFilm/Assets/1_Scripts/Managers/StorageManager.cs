@@ -50,6 +50,7 @@ namespace Core
 
                 foreach (var part in parts)
                 {
+                    Debug.Log("part " + part);
                     if (part.IsOpen)
                     {
                         if (currentPart == null)
