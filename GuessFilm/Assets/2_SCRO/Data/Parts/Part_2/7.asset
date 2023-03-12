@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b9af36af1570147a52e8fb68877bf6, type: 3}
+  m_Name: 7
+  m_EditorClassIdentifier: 
+  RussianVariants:
+  - "\u041D\u0430\u0447\u0430\u043B\u043E"
+  - "\u041A\u0440\u0438\u043C\u0438\u043D\u0430\u043B\u044C\u043D\u043E\u0435 \u0447\u0442\u0438\u0432\u043E"
+  - "\u0418\u0433\u0440\u044B \u0440\u0430\u0437\u0443\u043C\u0430"
+  - "\u0422\u0451\u043C\u043D\u044B\u0439 \u0440\u044B\u0446\u0430\u0440\u044C"
+  EnglishVariants:
+  - Inception
+  - Pulp Fiction
+  - A Beautiful Mind
+  - The Dark Knight
+  Sprite: {fileID: 21300000, guid: 77bcd3c980d78f144ab721d3eec79fd0, type: 3}
+  CountPoints: 15

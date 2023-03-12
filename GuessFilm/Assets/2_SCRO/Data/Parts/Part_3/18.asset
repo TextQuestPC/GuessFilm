@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b9af36af1570147a52e8fb68877bf6, type: 3}
+  m_Name: 18
+  m_EditorClassIdentifier: 
+  RussianVariants:
+  - "\u041C\u0438\u043B\u043B\u0438\u0430\u0440\u0434\u044B"
+  - "\u0421\u0435\u043A\u0440\u0435\u0442\u043D\u044B\u0435 \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u044B"
+  - "\u0421\u0432\u0435\u0440\u0445\u044A\u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0435"
+  - "\u041E\u0441\u0442\u0430\u0442\u044C\u0441\u044F \u0432 \u0436\u0438\u0432\u044B\u0445"
+  EnglishVariants:
+  - Billions
+  - The X-Files
+  - Supernatural
+  - Lost
+  Sprite: {fileID: 21300000, guid: bccf67bdfa13db64884d551f4430ed20, type: 3}
+  CountPoints: 15

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7110f619eeff2847a72889d07633b70, type: 3}
+  m_Name: StorageManager
+  m_EditorClassIdentifier: 
+  scro_parts:
+  - {fileID: 11400000, guid: 177bb31cd58f419478585a098d1c2008, type: 2}
+  - {fileID: 11400000, guid: 3f661a4c13e42994cad58c43f5130b56, type: 2}
+  - {fileID: 11400000, guid: 7c9f8655cd9132a48a2abc461b4b2537, type: 2}
+  - {fileID: 11400000, guid: 0dd6ff9a87dc9e04782a23c6a024d1fa, type: 2}
+  - {fileID: 11400000, guid: b7b4d29a032a86b4ebda1944bd991468, type: 2}
+  - {fileID: 11400000, guid: 7526f5b33ddbab14381d1cc9ce2408f0, type: 2}
+  - {fileID: 11400000, guid: 035016e452f3798418a2ae1eb3a21458, type: 2}

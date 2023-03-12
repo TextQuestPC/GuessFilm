@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b9af36af1570147a52e8fb68877bf6, type: 3}
+  m_Name: 21
+  m_EditorClassIdentifier: 
+  RussianVariants:
+  - "\u0422\u0438\u0442\u0430\u043D\u0438\u043A"
+  - "\u041F\u0438\u0440\u0430\u0442\u044B \u041A\u0430\u0440\u0438\u0431\u0441\u043A\u043E\u0433\u043E
+    \u043C\u043E\u0440\u044F"
+  - "\u0421\u0435\u043C\u044C"
+  - "\u0428\u043E\u0443 \u0422\u0440\u0443\u043C\u0430\u043D\u0430"
+  EnglishVariants:
+  - Titanic
+  - Pirates of the Caribbean
+  - Seven
+  - The Truman Show
+  Sprite: {fileID: 21300000, guid: 893c5f48e5dbd5a4f85aad8629de8670, type: 3}
+  CountPoints: 5

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b9af36af1570147a52e8fb68877bf6, type: 3}
+  m_Name: 20
+  m_EditorClassIdentifier: 
+  RussianVariants:
+  - "\u0413\u043E\u043B\u043E\u0432\u043E\u043B\u043E\u043C\u043A\u0430"
+  - "\u0414\u0443\u0448\u0430"
+  - "\u0412\u0432\u0435\u0440\u0445"
+  - "\u0412\u043F\u0435\u0440\u0451\u0434"
+  EnglishVariants:
+  - Inside Out
+  - Soul
+  - Up
+  - Onward
+  Sprite: {fileID: 21300000, guid: ab127881112431d4c99dc2de403e71f9, type: 3}
+  CountPoints: 10
