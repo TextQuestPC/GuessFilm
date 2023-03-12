@@ -57,5 +57,21 @@ namespace Data
         {
             NameUi = Localizator.Instance.GetTextUI(NamePart); 
         }
+
+        //public void SaveScore(int score)
+        //{
+        //    PlayerPrefs.SetInt("Score", score);
+        //}
+        //public int LoadScore()
+        //{
+        //    if (PlayerPrefs.HasKey("Score"))
+        //    {
+        //        return PlayerPrefs.GetInt("Score");
+        //    }
+        //    else
+        //    {
+        //        return 0;
+        //    }
+        //}
     }
 }

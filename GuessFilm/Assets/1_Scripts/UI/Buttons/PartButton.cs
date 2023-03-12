@@ -16,6 +16,7 @@ namespace UI
         private int numberPart;
         private bool isOpen;
 
+        //public EndPartWindow endPartWindow;
         protected override void AfterAwake()
         {
             partsWindow = GetComponentInParent<PartsWindow>();
@@ -23,13 +24,21 @@ namespace UI
 
         public void SetData(PartData data)
         {
+            int countG = 0;
+            foreach (var guess in data.GuessPuzzle)
+            {
+                if (guess)
+                {
+                    countG++;
+                }
+            }
             namePartText.text = data.NameUi;
             imagePart.sprite = data.SpritePart;
             numberPart = data.Id;
             priceText.text = data.PricePart.ToString();
-            countGuess.text = $"{data.GuessPuzzle.Length}/{data.PuzzlesData.Length}";
+            countGuess.text = $"{countG}/{data.PuzzlesData.Length}";
             sliderGuess.maxValue = data.PuzzlesData.Length;
-            sliderGuess.value = data.GuessPuzzle.Length;
+            sliderGuess.value = countG; /*data.GuessPuzzle.Length*/
             isOpen = data.IsOpen;
 
             openText.text = Localizator.Instance.GetTextUI("Open");

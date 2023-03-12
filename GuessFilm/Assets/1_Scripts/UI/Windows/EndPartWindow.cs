@@ -1,5 +1,6 @@
 using Core;
 using Data;
+using SaveSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,6 @@ namespace UI
     public class EndPartWindow : Window
     {
         [SerializeField] private Text endPartText, labelGuessText, countGuessText, labelCurrentPointsText, currentPointsText, buttonNextText;
-
         public override void ChangeLanguage()
         {
             endPartText.text = Localizator.Instance.GetTextUI("Part") + " " + BoxManager.GetManager<StorageManager>().GetCurrentPart.NameUi + " " + Localizator.Instance.GetTextUI("End");
@@ -29,10 +29,9 @@ namespace UI
                     countGuess++;
                 }
             }
-
-            countGuessText.text = $"{countGuess}/{partData.GuessPuzzle.Length}";
+            countGuessText.text = $"{countGuess}/{partData.GuessPuzzle.Length}"; /*GuessPuzzle*/
             currentPointsText.text = $"{ BoxManager.GetManager<PointsManager>().CurrentPoints}";
-
+            
             ChangeLanguage();
         }
 
