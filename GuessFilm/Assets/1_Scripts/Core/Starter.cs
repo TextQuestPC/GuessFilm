@@ -47,7 +47,6 @@ namespace Core
             if (!isLoad)
             {
                 isLoad = true;
-                Debug.Log($"LOAD DATA");
 
                 SaveLoadManager.Instance.OnLoad.AddListener(InitControllers);
                 SaveLoadManager.Instance.SetSaveInYandex = saveInYandex;

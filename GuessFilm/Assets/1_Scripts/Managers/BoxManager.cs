@@ -43,17 +43,12 @@ namespace Core
 
         private static void CreateManagers()
         {
-            Debug.Log($"START CreateManagers");
-
             foreach (var manager in sceneManagers.GetManagers)
             {
                 var add = Instantiate(manager);
 
                 data.Add(add.GetType(), add);
             }
-
-            Debug.Log($"END CreateManagers");
-
         }
 
         private static void InitManagers()

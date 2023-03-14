@@ -1,4 +1,5 @@
 ﻿using SaveSystem;
+using UnityEngine;
 
 namespace YG
 {
@@ -9,5 +10,10 @@ namespace YG
         public string language = "ru";
 
         public SaveData SaveData;
+
+        public SavesYG()
+        {
+            SaveData = new SaveData();
+        }
     }
 }

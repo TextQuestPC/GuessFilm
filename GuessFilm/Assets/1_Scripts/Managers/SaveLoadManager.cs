@@ -87,7 +87,6 @@ namespace SaveSystem
                 {
                     SaveData saveData = YandexGame.savesData.SaveData;
 
-                    Debug.Log("ПРоверяем какая дата пришла из сохранения");
                     Debug.Log($"points = {saveData.Points}");
                     Debug.Log($"partsData = {saveData.PartsData}");
                     Debug.Log($"firstStart = {saveData.FirstStart}");
