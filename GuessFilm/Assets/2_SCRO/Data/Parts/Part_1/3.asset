@@ -20,7 +20,7 @@ MonoBehaviour:
   EnglishVariants:
   - The Lion King
   - Soul
-  - "\u0411\u0430\u043B\u0442\u043E"
+  - Balto
   - Zootopia
   Sprite: {fileID: 21300000, guid: c5bd18d2b646e9a4aa07b8f979bf3896, type: 3}
   CountPoints: 5
