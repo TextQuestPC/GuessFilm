@@ -8,7 +8,7 @@ namespace Core
     [CreateAssetMenu(fileName = "AdManager", menuName = "Managers/AdManager")]
     public class AdManager : BaseManager
     {
-        private const int TIME_WAIT_AD = 10;
+        private const int TIME_WAIT_AD = 3;
 
         private YandexGame YG;
         public YandexGame SetYandexGame { set => YG = value; }

@@ -9,11 +9,8 @@ namespace YG
         public bool isFirstSession = true;
         public string language = "ru";
 
-        public SaveData SaveData;
-
-        public SavesYG()
-        {
-            SaveData = new SaveData();
-        }
+        public SavePartData[] PartsData;
+        public int Points = 0;
+        public bool FirstStart = false;
     }
 }

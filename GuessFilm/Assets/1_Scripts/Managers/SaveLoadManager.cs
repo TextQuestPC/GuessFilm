@@ -16,91 +16,32 @@ namespace SaveSystem
         [HideInInspector]
         public UnityEvent OnLoad;
 
-        private bool saveInYandex;
-
-        private SaveData saveData;
-
         public int GetPoints()
         {
-            if (saveInYandex)
-            {
-                return YandexGame.savesData.SaveData.Points;
-            }
-            else
-            {
-                if (saveData == null)
-                {
-                    return 0;
-                }
-                else
-                {
-                    return saveData.Points;
-                }
-            }
+            return YandexGame.savesData.Points;
         }
 
         public bool GetFirstStart()
         {
-            if (saveInYandex)
-            {
-                return YandexGame.savesData.SaveData.FirstStart;
-            }
-            else
-            {
-                if (saveData == null)
-                {
-                    return false;
-                }
-                else
-                {
-                    return saveData.FirstStart;
-                }
-            }
+            return YandexGame.savesData.FirstStart;
         }
 
         public SavePartData[] GetPartsData()
         {
-            if (saveInYandex)
-            {
-                return YandexGame.savesData.SaveData.PartsData;
-            }
-            else
-            {
-                if (saveData == null)
-                {
-                    return null;
-                }
-                else
-                {
-                    return saveData.PartsData;
-                }
-            }
+            return YandexGame.savesData.PartsData;            
         }
-
-        public bool SetSaveInYandex { set => saveInYandex = value; }
 
         public void LoadData()
         {
-            if (saveInYandex)
+            if (YandexGame.savesData != null)
             {
-                if (YandexGame.savesData.SaveData != null)
-                {
-                    SaveData saveData = YandexGame.savesData.SaveData;
-
-                    Debug.Log($"points = {saveData.Points}");
-                    Debug.Log($"partsData = {saveData.PartsData}");
-                    Debug.Log($"firstStart = {saveData.FirstStart}");
-                }
+                Debug.Log($"points = {YandexGame.savesData.Points}");
+                Debug.Log($"partsData = {YandexGame.savesData.PartsData}");
+                Debug.Log($"firstStart = {YandexGame.savesData.FirstStart}");
             }
             else
             {
-                // Local load data
-
-                if (File.Exists(Application.persistentDataPath + SAVE_NAME))
-                {
-                    string strLoadJson = File.ReadAllText(Application.persistentDataPath + SAVE_NAME);
-                    saveData = JsonUtility.FromJson<SaveData>(strLoadJson);
-                }
+                Debug.Log($"save data = null");
             }
 
             OnLoad?.Invoke();
@@ -111,32 +52,11 @@ namespace SaveSystem
             int points = BoxManager.GetManager<PointsManager>().Points;
             bool firstStart = true;
 
-            if (saveInYandex)
-            {
-                YandexGame.savesData.SaveData.PartsData = GeneratePartsData();
-                YandexGame.savesData.SaveData.Points = points;
-                YandexGame.savesData.SaveData.FirstStart = firstStart;
+            YandexGame.savesData.PartsData = GeneratePartsData();
+            YandexGame.savesData.Points = points;
+            YandexGame.savesData.FirstStart = firstStart;
 
-                YandexGame.SaveProgress();
-            }
-            else
-            {
-                SaveData saveData = new SaveData();
-                saveData.PartsData = GeneratePartsData();
-                saveData.Points = points;
-                saveData.FirstStart = firstStart;
-
-                string jsonString = JsonUtility.ToJson(saveData);
-
-                try
-                {
-                    File.WriteAllText(Application.persistentDataPath + SAVE_NAME, jsonString);
-                }
-                catch (Exception ex)
-                {
-                    LogManager.Instance.LogError($"Error save SaveOpenPart - {ex}");
-                }
-            }
+            YandexGame.SaveProgress();
         }
 
         private SavePartData[] GeneratePartsData()

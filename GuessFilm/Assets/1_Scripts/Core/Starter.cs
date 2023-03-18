@@ -11,7 +11,7 @@ namespace Core
         [SerializeField] YandexGame YG;
 
         [SerializeField] private SCRO_SceneManagers sceneManagers;
-        [SerializeField] private bool isLogging, skipTutorial, saveInYandex;
+        [SerializeField] private bool isLogging, skipTutorial;
 
         private bool isLoad;
 
@@ -49,7 +49,6 @@ namespace Core
                 isLoad = true;
 
                 SaveLoadManager.Instance.OnLoad.AddListener(InitControllers);
-                SaveLoadManager.Instance.SetSaveInYandex = saveInYandex;
                 SaveLoadManager.Instance.LoadData();
             }
         }

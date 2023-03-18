@@ -20,7 +20,7 @@ public class SaverTest : MonoBehaviour
 
     public void Save()
     {
-        YandexGame.savesData.SaveData.Points = int.Parse(integerText.text);
+        YandexGame.savesData.Points = int.Parse(integerText.text);
         //YandexGame.savesData.newPlayerName = stringifyText.text.ToString();
 
         //for (int i = 0; i < booleanArrayToggle.Length; i++)
