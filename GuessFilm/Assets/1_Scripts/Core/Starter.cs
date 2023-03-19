@@ -17,16 +17,19 @@ namespace Core
 
         private void Start()
         {
-            AuthorizationPlayer();
+            YandexGame.GetDataEvent += () =>
+            {
+                LoadData();
+            };
         }
 
-        private void AuthorizationPlayer()
-        {
-            YG.ResolvedAuthorization.AddListener(ResolvedAuthorization);
-            YG.RejectedAuthorization.AddListener(RejectedAuthorization);
-
-            YG._AuthorizationCheck();
-        }
+        // private void AuthorizationPlayer()
+        // {
+        //     YG.ResolvedAuthorization.AddListener(ResolvedAuthorization);
+        //     YG.RejectedAuthorization.AddListener(RejectedAuthorization);
+        //
+        //     YG._AuthorizationCheck();
+        // }
 
         private void ResolvedAuthorization()
         {
