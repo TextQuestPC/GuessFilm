@@ -1346,7 +1346,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2807,7 +2807,6 @@ MonoBehaviour:
   sceneManagers: {fileID: 11400000, guid: 5bea4a854fb58ed43b0e7ee78aa1a7bc, type: 2}
   isLogging: 1
   skipTutorial: 1
-  saveInYandex: 1
 --- !u!4 &578114763
 Transform:
   m_ObjectHideFlags: 0
@@ -8067,7 +8066,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
