@@ -23,14 +23,6 @@ namespace Core
             };
         }
 
-        // private void AuthorizationPlayer()
-        // {
-        //     YG.ResolvedAuthorization.AddListener(ResolvedAuthorization);
-        //     YG.RejectedAuthorization.AddListener(RejectedAuthorization);
-        //
-        //     YG._AuthorizationCheck();
-        // }
-
         private void ResolvedAuthorization()
         {
             LogManager.Instance.Log("End Authorization");

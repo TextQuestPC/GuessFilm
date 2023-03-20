@@ -75,5 +75,15 @@ namespace SaveSystem
 
             return savePartData;
         }
+        
+        public void DeleteSave()
+        {
+            if (File.Exists(Application.persistentDataPath + SAVE_NAME))
+            {
+                File.Delete(Application.persistentDataPath + SAVE_NAME);
+            }
+
+            YandexGame.savesData.language = null;
+        }
     }
 }
